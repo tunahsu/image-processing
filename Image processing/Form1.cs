@@ -15,20 +15,15 @@ namespace Image_processing
     {
         static Bitmap img = new Bitmap(1, 1);
         static Bitmap img_origin = new Bitmap(1, 1);
-        static Bitmap img_temp = new Bitmap(1, 1);
         static int pixel;
+        static int pixel_origin;
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_open_Click(object sender, EventArgs e)
+        private void button_open_Click(object sender, EventArgs e) //open file
         {
             OpenFileDialog openImg = new OpenFileDialog();
 
@@ -39,20 +34,67 @@ namespace Image_processing
 
             if (openImg.ShowDialog() == DialogResult.OK)
             {
-                img = new Bitmap(Image.FromFile(openImg.FileName));
-                img = img.Clone(new Rectangle(0, 0, img.Width, img.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
-                img_origin = new Bitmap(img);
-                img_temp = img;
+                //create image
+                img_origin = new Bitmap(Image.FromFile(openImg.FileName));
+                img_origin = img_origin.Clone(new Rectangle(0, 0, img_origin.Width, img_origin.Height), System.Drawing.Imaging.PixelFormat.Format24bppRgb);
+                img = new Bitmap(img_origin);
 
+                //set image information
                 pictureBox1.Image = img_origin;
                 pictureBox2.Image = null;
                 label_origin.Text = img.Width.ToString() + " X " + img.Height.ToString();
                 textBox_width.Text = img.Width.ToString();
                 textBox_height.Text = img.Height.ToString();
+                pixel_origin = img_origin.Width * img_origin.Height;
+
+                //test
+                /*
+                int[] scale_r = new int[256];
+                int[] scale_g = new int[256];
+                int[] scale_b = new int[256];
+
+                for (int x = 0; x < img_origin.Width; x++)
+                {
+                    for (int y = 0; y < img_origin.Height; y++)
+                    {
+                        int red = img.GetPixel(x, y).R;
+                        int green = img.GetPixel(x, y).G;
+                        int blue = img.GetPixel(x, y).B;
+
+                        scale_r[red]++;
+                        scale_r[green]++;
+                        scale_r[blue]++;
+                    }
+                }
+
+                for(int i  = 0; i <  256; i++)
+                {
+                    scale_r[i] = (int)((double)(scale_r[i] / pixel_origin) * 80);
+                    MessageBox.Show(scale_r[i].ToString());
+                }
+                */
+
+                /*
+                Bitmap scale = new Bitmap(80, 80);
+
+                for(int y = 79; y >= 0; y--)
+                {
+                    for(int x = 0; x < 80; x++)
+                    {
+                        if(scale_r[3 * x] != 0){
+                            scale_r[3 * x]--;
+                            scale.SetPixel(x, y, Color.Red);
+                            MessageBox.Show(scale_r[3 * x].ToString());
+                        }
+                    }
+                }
+
+                pictureBox3.Image = scale;
+                */
             }
         }
 
-        private void button_save_Click(object sender, EventArgs e)
+        private void button_save_Click(object sender, EventArgs e) //save file
         {
             SaveFileDialog saveImg = new SaveFileDialog();
 
@@ -69,25 +111,13 @@ namespace Image_processing
 
         private void button_undo_Click(object sender, EventArgs e)
         {
-            try
-            {
-                img = img_temp;
-                pictureBox2.Image = img;
-                label_result.Text = img.Width.ToString() + " X " + img.Height.ToString();
-                textBox_width.Text = img.Width.ToString();
-                textBox_height.Text = img.Height.ToString();
-            }
-            catch
-            {
 
-            }
         }
 
-        private void button_origin_Click(object sender, EventArgs e)
+        private void button_origin_Click(object sender, EventArgs e) //reset image
         {
             try
             {
-                img_temp = img;
                 img = img_origin;
                 pictureBox2.Image = img;
                 label_result.Text = img.Width.ToString() + " X " + img.Height.ToString();
@@ -100,14 +130,16 @@ namespace Image_processing
             }
         }
 
-        private void button_resize_Click(object sender, EventArgs e)
+        private void button_resize_Click(object sender, EventArgs e) //resize image
         {
             try
             {
+                //create new size image
                 int re_width = Int32.Parse(textBox_width.Text);
                 int re_height = Int32.Parse(textBox_height.Text);
-                img_temp = img;
                 img = new Bitmap(img_origin, new Size(re_width, re_height));
+
+                //new size image information
                 label_result.Text = re_width.ToString() + " X " + re_height.ToString();
                 pictureBox2.Image = img;
                 pixel = img.Width * img.Height;
@@ -118,6 +150,26 @@ namespace Image_processing
             {
                 MessageBox.Show("Please select image ! ! !", "Error");
             }
+        }
+
+        private void button_grayscale_Click(object sender, EventArgs e)
+        {
+            Bitmap grayscale = new Bitmap(img.Width, img.Height);
+
+            for(int x = 0; x < img.Width; x++)
+            {
+                for (int y = 0; y < img.Height; y++)
+                {
+                    int red = img.GetPixel(x, y).R;
+                    int green = img.GetPixel(x, y).G;
+                    int blue = img.GetPixel(x, y).G;
+                    int gray = (int)(red * 0.299 + green * 0.587 + blue * 0.114);
+
+                    grayscale.SetPixel(x, y, Color.FromArgb(gray, gray, gray));
+                }
+            }
+
+            pictureBox2.Image = grayscale;
         }
     }
 }
