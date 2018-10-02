@@ -171,5 +171,41 @@ namespace Image_processing
 
             pictureBox2.Image = grayscale;
         }
+
+        private void button_blur_Click(object sender, EventArgs e)
+        {
+            String s = "";
+
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 0; y < img.Height; y++)
+                {
+                    int red = img.GetPixel(x, y).R;
+                    s += string.Format("{0:D3}", red) + " ";
+                }
+                s += "\n";
+            }
+
+            label_blur.Text = s;
+        }
+
+        private void button_invert_Click(object sender, EventArgs e)
+        {
+            Bitmap invert = new Bitmap(img.Width, img.Height);
+
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 0; y < img.Height; y++)
+                {
+                    int red = 255 - img.GetPixel(x, y).R;
+                    int green = 255 - img.GetPixel(x, y).G;
+                    int blue = 255 - img.GetPixel(x, y).B;
+
+                    invert.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                }
+            }
+
+            pictureBox2.Image = invert;
+        }
     }
 }
