@@ -137,7 +137,7 @@ namespace Image_processing
                 //create new size image
                 int re_width = Int32.Parse(textBox_width.Text);
                 int re_height = Int32.Parse(textBox_height.Text);
-                img = new Bitmap(img_origin, new Size(re_width, re_height));
+                img = new Bitmap(img, new Size(re_width, re_height));
 
                 //new size image information
                 label_result.Text = re_width.ToString() + " X " + re_height.ToString();
@@ -169,6 +169,7 @@ namespace Image_processing
                 }
             }
 
+            img = grayscale;
             pictureBox2.Image = grayscale;
         }
 
@@ -189,9 +190,9 @@ namespace Image_processing
             label_blur.Text = s;
         }
 
-        private void button_invert_Click(object sender, EventArgs e)
+        private void button_negative_Click(object sender, EventArgs e)
         {
-            Bitmap invert = new Bitmap(img.Width, img.Height);
+            Bitmap negative = new Bitmap(img.Width, img.Height);
 
             for (int x = 0; x < img.Width; x++)
             {
@@ -201,11 +202,39 @@ namespace Image_processing
                     int green = 255 - img.GetPixel(x, y).G;
                     int blue = 255 - img.GetPixel(x, y).B;
 
-                    invert.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    negative.SetPixel(x, y, Color.FromArgb(red, green, blue));
                 }
             }
 
-            pictureBox2.Image = invert;
+            img = negative;
+            pictureBox2.Image = negative;
+        }
+
+        private void button_retro_Click(object sender, EventArgs e)
+        {
+            Bitmap retro = new Bitmap(img.Width, img.Height);
+
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 0; y < img.Height; y++)
+                {
+                    int r = img.GetPixel(x, y).R;
+                    int g = img.GetPixel(x, y).G;
+                    int b = img.GetPixel(x, y).B;
+
+                    int red = (int)(r * 0.393 + 0.769 * g + 0.189 * b);
+                    int green = (int)(r * 0.343 + 0.686 * g + 0.168 * b);
+                    int blue = (int)(r * 0.272 + 0.543 * g + 0.131 * b);
+
+                    if (red > 255) { red = 255; }
+                    if (green > 255) { green = 255; }
+
+                    retro.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                }
+            }
+
+            img = retro;
+            pictureBox2.Image = retro;
         }
     }
 }

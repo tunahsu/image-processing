@@ -49,8 +49,9 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.button_blur = new System.Windows.Forms.Button();
-            this.button_invert = new System.Windows.Forms.Button();
+            this.button_negative = new System.Windows.Forms.Button();
             this.label_blur = new System.Windows.Forms.Label();
+            this.button_retro = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -107,10 +108,10 @@
             // 
             // button_origin
             // 
-            this.button_origin.Location = new System.Drawing.Point(646, 18);
+            this.button_origin.Location = new System.Drawing.Point(653, 97);
             this.button_origin.Margin = new System.Windows.Forms.Padding(2);
             this.button_origin.Name = "button_origin";
-            this.button_origin.Size = new System.Drawing.Size(60, 22);
+            this.button_origin.Size = new System.Drawing.Size(62, 28);
             this.button_origin.TabIndex = 4;
             this.button_origin.Text = "Origin";
             this.button_origin.UseVisualStyleBackColor = true;
@@ -134,23 +135,23 @@
             // 
             // textBox_width
             // 
-            this.textBox_width.Location = new System.Drawing.Point(776, 18);
+            this.textBox_width.Location = new System.Drawing.Point(785, 18);
             this.textBox_width.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_width.Name = "textBox_width";
-            this.textBox_width.Size = new System.Drawing.Size(50, 22);
+            this.textBox_width.Size = new System.Drawing.Size(60, 22);
             this.textBox_width.TabIndex = 7;
             // 
             // textBox_height
             // 
-            this.textBox_height.Location = new System.Drawing.Point(776, 50);
+            this.textBox_height.Location = new System.Drawing.Point(785, 50);
             this.textBox_height.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_height.Name = "textBox_height";
-            this.textBox_height.Size = new System.Drawing.Size(50, 22);
+            this.textBox_height.Size = new System.Drawing.Size(60, 22);
             this.textBox_height.TabIndex = 8;
             // 
             // label_width
             // 
-            this.label_width.Location = new System.Drawing.Point(725, 18);
+            this.label_width.Location = new System.Drawing.Point(735, 18);
             this.label_width.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_width.Name = "label_width";
             this.label_width.Size = new System.Drawing.Size(46, 22);
@@ -160,7 +161,7 @@
             // 
             // label_height
             // 
-            this.label_height.Location = new System.Drawing.Point(725, 50);
+            this.label_height.Location = new System.Drawing.Point(735, 50);
             this.label_height.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_height.Name = "label_height";
             this.label_height.Size = new System.Drawing.Size(46, 22);
@@ -170,7 +171,7 @@
             // 
             // button_resize
             // 
-            this.button_resize.Location = new System.Drawing.Point(853, 18);
+            this.button_resize.Location = new System.Drawing.Point(653, 18);
             this.button_resize.Margin = new System.Windows.Forms.Padding(2);
             this.button_resize.Name = "button_resize";
             this.button_resize.Size = new System.Drawing.Size(62, 52);
@@ -192,10 +193,10 @@
             // 
             // button_grayscale
             // 
-            this.button_grayscale.Location = new System.Drawing.Point(646, 50);
+            this.button_grayscale.Location = new System.Drawing.Point(783, 97);
             this.button_grayscale.Margin = new System.Windows.Forms.Padding(2);
             this.button_grayscale.Name = "button_grayscale";
-            this.button_grayscale.Size = new System.Drawing.Size(60, 22);
+            this.button_grayscale.Size = new System.Drawing.Size(62, 28);
             this.button_grayscale.TabIndex = 13;
             this.button_grayscale.Text = "Grayscale";
             this.button_grayscale.UseVisualStyleBackColor = true;
@@ -237,7 +238,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox6.Location = new System.Drawing.Point(543, 454);
+            this.pictureBox6.Location = new System.Drawing.Point(544, 454);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(80, 80);
@@ -269,42 +270,54 @@
             // 
             // button_blur
             // 
-            this.button_blur.Location = new System.Drawing.Point(646, 82);
+            this.button_blur.Location = new System.Drawing.Point(653, 165);
             this.button_blur.Margin = new System.Windows.Forms.Padding(2);
             this.button_blur.Name = "button_blur";
-            this.button_blur.Size = new System.Drawing.Size(60, 22);
+            this.button_blur.Size = new System.Drawing.Size(62, 28);
             this.button_blur.TabIndex = 20;
             this.button_blur.Text = "Blur";
             this.button_blur.UseVisualStyleBackColor = true;
             this.button_blur.Click += new System.EventHandler(this.button_blur_Click);
             // 
-            // button_invert
+            // button_negative
             // 
-            this.button_invert.Location = new System.Drawing.Point(646, 114);
-            this.button_invert.Margin = new System.Windows.Forms.Padding(2);
-            this.button_invert.Name = "button_invert";
-            this.button_invert.Size = new System.Drawing.Size(60, 22);
-            this.button_invert.TabIndex = 21;
-            this.button_invert.Text = "Invert";
-            this.button_invert.UseVisualStyleBackColor = true;
-            this.button_invert.Click += new System.EventHandler(this.button_invert_Click);
+            this.button_negative.Location = new System.Drawing.Point(783, 165);
+            this.button_negative.Margin = new System.Windows.Forms.Padding(2);
+            this.button_negative.Name = "button_negative";
+            this.button_negative.Size = new System.Drawing.Size(62, 28);
+            this.button_negative.TabIndex = 21;
+            this.button_negative.Text = "Negative";
+            this.button_negative.UseVisualStyleBackColor = true;
+            this.button_negative.Click += new System.EventHandler(this.button_negative_Click);
             // 
             // label_blur
             // 
             this.label_blur.AutoSize = true;
-            this.label_blur.Location = new System.Drawing.Point(644, 168);
+            this.label_blur.Location = new System.Drawing.Point(651, 311);
             this.label_blur.Name = "label_blur";
             this.label_blur.Size = new System.Drawing.Size(33, 12);
             this.label_blur.TabIndex = 22;
             this.label_blur.Text = "label1";
+            // 
+            // button_retro
+            // 
+            this.button_retro.Location = new System.Drawing.Point(653, 236);
+            this.button_retro.Margin = new System.Windows.Forms.Padding(2);
+            this.button_retro.Name = "button_retro";
+            this.button_retro.Size = new System.Drawing.Size(62, 28);
+            this.button_retro.TabIndex = 23;
+            this.button_retro.Text = "Retro";
+            this.button_retro.UseVisualStyleBackColor = true;
+            this.button_retro.Click += new System.EventHandler(this.button_retro_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 574);
+            this.Controls.Add(this.button_retro);
             this.Controls.Add(this.label_blur);
-            this.Controls.Add(this.button_invert);
+            this.Controls.Add(this.button_negative);
             this.Controls.Add(this.button_blur);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox7);
@@ -365,8 +378,9 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button button_blur;
-        private System.Windows.Forms.Button button_invert;
+        private System.Windows.Forms.Button button_negative;
         private System.Windows.Forms.Label label_blur;
+        private System.Windows.Forms.Button button_retro;
     }
 }
 
