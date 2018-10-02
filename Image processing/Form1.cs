@@ -236,5 +236,63 @@ namespace Image_processing
             img = retro;
             pictureBox2.Image = retro;
         }
+
+        private void button_medium_Click(object sender, EventArgs e)
+        {
+            Bitmap medium = new Bitmap(img.Width, img.Height);
+            int[] r = new int[9];
+            int[] g = new int[9];
+            int[] b = new int[9];
+
+
+            for (int x = 1; x < img.Width - 1; x++)
+            {
+                for (int y = 1; y < img.Height - 1 ; y++)
+                {
+                    r[0] = img.GetPixel(x - 1, y - 1).R;
+                    r[1] = img.GetPixel(x - 1, y).R;
+                    r[2] = img.GetPixel(x - 1, y + 1).R;
+                    r[3] = img.GetPixel(x, y - 1).R;
+                    r[4] = img.GetPixel(x, y).R;
+                    r[5] = img.GetPixel(x, y + 1).R;
+                    r[6] = img.GetPixel(x + 1, y - 1).R;
+                    r[7] = img.GetPixel(x + 1, y).R;
+                    r[8] = img.GetPixel(x + 1, y + 1).R;
+
+                    g[0] = img.GetPixel(x - 1, y - 1).G;
+                    g[1] = img.GetPixel(x - 1, y).G;
+                    g[2] = img.GetPixel(x - 1, y + 1).G;
+                    g[3] = img.GetPixel(x, y - 1).G;
+                    g[4] = img.GetPixel(x, y).G;
+                    g[5] = img.GetPixel(x, y + 1).G;
+                    g[6] = img.GetPixel(x + 1, y - 1).G;
+                    g[7] = img.GetPixel(x + 1, y).G;
+                    g[8] = img.GetPixel(x + 1, y + 1).G;
+
+                    b[0] = img.GetPixel(x - 1, y - 1).B;
+                    b[1] = img.GetPixel(x - 1, y).B;
+                    b[2] = img.GetPixel(x - 1, y + 1).B;
+                    b[3] = img.GetPixel(x, y - 1).B;
+                    b[4] = img.GetPixel(x, y).B;
+                    b[5] = img.GetPixel(x, y + 1).B;
+                    b[6] = img.GetPixel(x + 1, y - 1).B;
+                    b[7] = img.GetPixel(x + 1, y).B;
+                    b[8] = img.GetPixel(x + 1, y + 1).B;
+
+                    Array.Sort(r);
+                    Array.Sort(g);
+                    Array.Sort(b);
+
+                    int red = r[4];
+                    int green = g[4];
+                    int blue = b[4];
+
+                    medium.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                }
+            }
+
+            img = medium;
+            pictureBox2.Image = medium;
+        }
     }
 }

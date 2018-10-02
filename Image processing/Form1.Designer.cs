@@ -52,6 +52,7 @@
             this.button_negative = new System.Windows.Forms.Button();
             this.label_blur = new System.Windows.Forms.Label();
             this.button_retro = new System.Windows.Forms.Button();
+            this.button_medium = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -310,11 +311,23 @@
             this.button_retro.UseVisualStyleBackColor = true;
             this.button_retro.Click += new System.EventHandler(this.button_retro_Click);
             // 
+            // button_medium
+            // 
+            this.button_medium.Location = new System.Drawing.Point(785, 236);
+            this.button_medium.Margin = new System.Windows.Forms.Padding(2);
+            this.button_medium.Name = "button_medium";
+            this.button_medium.Size = new System.Drawing.Size(62, 28);
+            this.button_medium.TabIndex = 24;
+            this.button_medium.Text = "Medium";
+            this.button_medium.UseVisualStyleBackColor = true;
+            this.button_medium.Click += new System.EventHandler(this.button_medium_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 574);
+            this.Controls.Add(this.button_medium);
             this.Controls.Add(this.button_retro);
             this.Controls.Add(this.label_blur);
             this.Controls.Add(this.button_negative);
@@ -381,6 +394,7 @@
         private System.Windows.Forms.Button button_negative;
         private System.Windows.Forms.Label label_blur;
         private System.Windows.Forms.Button button_retro;
+        private System.Windows.Forms.Button button_medium;
     }
 }
 
