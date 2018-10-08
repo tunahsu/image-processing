@@ -48,11 +48,11 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.button_blur = new System.Windows.Forms.Button();
             this.button_negative = new System.Windows.Forms.Button();
-            this.label_blur = new System.Windows.Forms.Label();
             this.button_retro = new System.Windows.Forms.Button();
-            this.button_medium = new System.Windows.Forms.Button();
+            this.button_median = new System.Windows.Forms.Button();
+            this.button_mean = new System.Windows.Forms.Button();
+            this.button_gaussian = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -269,20 +269,9 @@
             this.pictureBox8.TabIndex = 17;
             this.pictureBox8.TabStop = false;
             // 
-            // button_blur
-            // 
-            this.button_blur.Location = new System.Drawing.Point(653, 165);
-            this.button_blur.Margin = new System.Windows.Forms.Padding(2);
-            this.button_blur.Name = "button_blur";
-            this.button_blur.Size = new System.Drawing.Size(62, 28);
-            this.button_blur.TabIndex = 20;
-            this.button_blur.Text = "Blur";
-            this.button_blur.UseVisualStyleBackColor = true;
-            this.button_blur.Click += new System.EventHandler(this.button_blur_Click);
-            // 
             // button_negative
             // 
-            this.button_negative.Location = new System.Drawing.Point(783, 165);
+            this.button_negative.Location = new System.Drawing.Point(653, 173);
             this.button_negative.Margin = new System.Windows.Forms.Padding(2);
             this.button_negative.Name = "button_negative";
             this.button_negative.Size = new System.Drawing.Size(62, 28);
@@ -291,18 +280,9 @@
             this.button_negative.UseVisualStyleBackColor = true;
             this.button_negative.Click += new System.EventHandler(this.button_negative_Click);
             // 
-            // label_blur
-            // 
-            this.label_blur.AutoSize = true;
-            this.label_blur.Location = new System.Drawing.Point(651, 311);
-            this.label_blur.Name = "label_blur";
-            this.label_blur.Size = new System.Drawing.Size(33, 12);
-            this.label_blur.TabIndex = 22;
-            this.label_blur.Text = "label1";
-            // 
             // button_retro
             // 
-            this.button_retro.Location = new System.Drawing.Point(653, 236);
+            this.button_retro.Location = new System.Drawing.Point(785, 173);
             this.button_retro.Margin = new System.Windows.Forms.Padding(2);
             this.button_retro.Name = "button_retro";
             this.button_retro.Size = new System.Drawing.Size(62, 28);
@@ -311,27 +291,49 @@
             this.button_retro.UseVisualStyleBackColor = true;
             this.button_retro.Click += new System.EventHandler(this.button_retro_Click);
             // 
-            // button_medium
+            // button_median
             // 
-            this.button_medium.Location = new System.Drawing.Point(785, 236);
-            this.button_medium.Margin = new System.Windows.Forms.Padding(2);
-            this.button_medium.Name = "button_medium";
-            this.button_medium.Size = new System.Drawing.Size(62, 28);
-            this.button_medium.TabIndex = 24;
-            this.button_medium.Text = "Medium";
-            this.button_medium.UseVisualStyleBackColor = true;
-            this.button_medium.Click += new System.EventHandler(this.button_medium_Click);
+            this.button_median.Location = new System.Drawing.Point(653, 270);
+            this.button_median.Margin = new System.Windows.Forms.Padding(2);
+            this.button_median.Name = "button_median";
+            this.button_median.Size = new System.Drawing.Size(62, 28);
+            this.button_median.TabIndex = 24;
+            this.button_median.Text = "Median";
+            this.button_median.UseVisualStyleBackColor = true;
+            this.button_median.Click += new System.EventHandler(this.button_median_Click);
+            // 
+            // button_mean
+            // 
+            this.button_mean.Location = new System.Drawing.Point(785, 270);
+            this.button_mean.Margin = new System.Windows.Forms.Padding(2);
+            this.button_mean.Name = "button_mean";
+            this.button_mean.Size = new System.Drawing.Size(62, 28);
+            this.button_mean.TabIndex = 25;
+            this.button_mean.Text = "Mean";
+            this.button_mean.UseVisualStyleBackColor = true;
+            this.button_mean.Click += new System.EventHandler(this.button_mean_Click);
+            // 
+            // button_gaussian
+            // 
+            this.button_gaussian.Location = new System.Drawing.Point(653, 352);
+            this.button_gaussian.Margin = new System.Windows.Forms.Padding(2);
+            this.button_gaussian.Name = "button_gaussian";
+            this.button_gaussian.Size = new System.Drawing.Size(62, 28);
+            this.button_gaussian.TabIndex = 26;
+            this.button_gaussian.Text = "Gaussian";
+            this.button_gaussian.UseVisualStyleBackColor = true;
+            this.button_gaussian.Click += new System.EventHandler(this.button_gaussian_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 574);
-            this.Controls.Add(this.button_medium);
+            this.Controls.Add(this.button_gaussian);
+            this.Controls.Add(this.button_mean);
+            this.Controls.Add(this.button_median);
             this.Controls.Add(this.button_retro);
-            this.Controls.Add(this.label_blur);
             this.Controls.Add(this.button_negative);
-            this.Controls.Add(this.button_blur);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox8);
@@ -390,11 +392,11 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.Button button_blur;
         private System.Windows.Forms.Button button_negative;
-        private System.Windows.Forms.Label label_blur;
         private System.Windows.Forms.Button button_retro;
-        private System.Windows.Forms.Button button_medium;
+        private System.Windows.Forms.Button button_median;
+        private System.Windows.Forms.Button button_mean;
+        private System.Windows.Forms.Button button_gaussian;
     }
 }
 

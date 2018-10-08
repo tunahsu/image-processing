@@ -173,23 +173,6 @@ namespace Image_processing
             pictureBox2.Image = grayscale;
         }
 
-        private void button_blur_Click(object sender, EventArgs e)
-        {
-            String s = "";
-
-            for (int x = 0; x < img.Width; x++)
-            {
-                for (int y = 0; y < img.Height; y++)
-                {
-                    int red = img.GetPixel(x, y).R;
-                    s += string.Format("{0:D3}", red) + " ";
-                }
-                s += "\n";
-            }
-
-            label_blur.Text = s;
-        }
-
         private void button_negative_Click(object sender, EventArgs e)
         {
             Bitmap negative = new Bitmap(img.Width, img.Height);
@@ -237,62 +220,178 @@ namespace Image_processing
             pictureBox2.Image = retro;
         }
 
-        private void button_medium_Click(object sender, EventArgs e)
+        private void button_median_Click(object sender, EventArgs e)
         {
             Bitmap medium = new Bitmap(img.Width, img.Height);
             int[] r = new int[9];
             int[] g = new int[9];
             int[] b = new int[9];
+            int[] pixelX = new int[3];
+            int[] pixelY = new int[3];
 
-
-            for (int x = 1; x < img.Width - 1; x++)
+            for (int x = 0; x < img.Width; x++)
             {
-                for (int y = 1; y < img.Height - 1 ; y++)
+                for (int y = 1; y < img.Height; y++)
                 {
-                    r[0] = img.GetPixel(x - 1, y - 1).R;
-                    r[1] = img.GetPixel(x - 1, y).R;
-                    r[2] = img.GetPixel(x - 1, y + 1).R;
-                    r[3] = img.GetPixel(x, y - 1).R;
-                    r[4] = img.GetPixel(x, y).R;
-                    r[5] = img.GetPixel(x, y + 1).R;
-                    r[6] = img.GetPixel(x + 1, y - 1).R;
-                    r[7] = img.GetPixel(x + 1, y).R;
-                    r[8] = img.GetPixel(x + 1, y + 1).R;
+                    if (x == 0 || x == (img.Width - 1) || y == 0 || y == (img.Height - 1))
+                    {
+                        medium.SetPixel(x, y, Color.FromArgb(img.GetPixel(x, y).R, img.GetPixel(x, y).G, img.GetPixel(x, y).B));
+                    }
+                    else
+                    {
+                        pixelX[0] = x - 1;
+                        pixelX[1] = x;
+                        pixelX[2] = x + 1;
+                        pixelY[0] = y - 1;
+                        pixelY[1] = y;
+                        pixelY[2] = y + 1;
 
-                    g[0] = img.GetPixel(x - 1, y - 1).G;
-                    g[1] = img.GetPixel(x - 1, y).G;
-                    g[2] = img.GetPixel(x - 1, y + 1).G;
-                    g[3] = img.GetPixel(x, y - 1).G;
-                    g[4] = img.GetPixel(x, y).G;
-                    g[5] = img.GetPixel(x, y + 1).G;
-                    g[6] = img.GetPixel(x + 1, y - 1).G;
-                    g[7] = img.GetPixel(x + 1, y).G;
-                    g[8] = img.GetPixel(x + 1, y + 1).G;
+                        for (int i = 0; i < 3; i++)
+                        {
+                            for (int j = 0; j < 3; j++)
+                            {
+                                r[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).R;
+                                g[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).G;
+                                b[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).B;
+                            }
+                        }
 
-                    b[0] = img.GetPixel(x - 1, y - 1).B;
-                    b[1] = img.GetPixel(x - 1, y).B;
-                    b[2] = img.GetPixel(x - 1, y + 1).B;
-                    b[3] = img.GetPixel(x, y - 1).B;
-                    b[4] = img.GetPixel(x, y).B;
-                    b[5] = img.GetPixel(x, y + 1).B;
-                    b[6] = img.GetPixel(x + 1, y - 1).B;
-                    b[7] = img.GetPixel(x + 1, y).B;
-                    b[8] = img.GetPixel(x + 1, y + 1).B;
+                        Array.Sort(r);
+                        Array.Sort(g);
+                        Array.Sort(b);
 
-                    Array.Sort(r);
-                    Array.Sort(g);
-                    Array.Sort(b);
+                        int red = r[4];
+                        int green = g[4];
+                        int blue = b[4];
 
-                    int red = r[4];
-                    int green = g[4];
-                    int blue = b[4];
-
-                    medium.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                        medium.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
                 }
             }
 
             img = medium;
             pictureBox2.Image = medium;
+        }
+
+        private void button_mean_Click(object sender, EventArgs e)
+        {
+            Bitmap mean = new Bitmap(img.Width, img.Height);
+            int[] r = new int[9];
+            int[] g = new int[9];
+            int[] b = new int[9];
+            int[] pixelX = new int[3];
+            int[] pixelY = new int[3];
+
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 1; y < img.Height; y++)
+                {
+                    if (x == 0 || x == (img.Width - 1) || y == 0 || y == (img.Height - 1))
+                    {
+                        mean.SetPixel(x, y, Color.FromArgb(img.GetPixel(x, y).R, img.GetPixel(x, y).G, img.GetPixel(x, y).B));
+                    }
+                    else
+                    {
+                        pixelX[0] = x - 1;
+                        pixelX[1] = x;
+                        pixelX[2] = x + 1;
+                        pixelY[0] = y - 1;
+                        pixelY[1] = y;
+                        pixelY[2] = y + 1;
+
+                        int red = 0;
+                        int green = 0;
+                        int blue = 0;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+                            for (int j = 0; j < 3; j++)
+                            {
+                                red += r[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).R;
+                                green += g[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).G;
+                                blue += b[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).B;
+                            }
+                        }
+
+                        red /= 9;
+                        green /= 9;
+                        blue /= 9;
+
+                        mean.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+            }
+
+            img = mean;
+            pictureBox2.Image = mean;
+        }
+
+        private void button_gaussian_Click(object sender, EventArgs e)
+        {
+            Bitmap gaussian = new Bitmap(img.Width, img.Height);
+            int[] r = new int[9];
+            int[] g = new int[9];
+            int[] b = new int[9];
+            int[] pixelX = new int[3];
+            int[] pixelY = new int[3];
+
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 1; y < img.Height; y++)
+                {
+                    if (x == 0 || x == (img.Width - 1) || y == 0 || y == (img.Height - 1))
+                    {
+                        gaussian.SetPixel(x, y, Color.FromArgb(img.GetPixel(x, y).R, img.GetPixel(x, y).G, img.GetPixel(x, y).B));
+                    }
+                    else
+                    {
+                        pixelX[0] = x - 1;
+                        pixelX[1] = x;
+                        pixelX[2] = x + 1;
+                        pixelY[0] = y - 1;
+                        pixelY[1] = y;
+                        pixelY[2] = y + 1;
+
+                        int red = 0;
+                        int green = 0;
+                        int blue = 0;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+                            for (int j = 0; j < 3; j++)
+                            {
+                                if((i == 0 && j == 0) || (i == 0 && j == 2) || (i == 2 && j == 0) || (i == 2 && j == 2))
+                                {
+                                    red += r[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).R;
+                                    green += g[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).G;
+                                    blue += b[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).B;
+                                }
+                                else if((i == 0 && j == 1) || (i == 1 && j == 0) || (i == 1 && j == 2) || (i == 2 && j == 1))
+                                {
+                                    red += r[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).R * 2;
+                                    green += g[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).G * 2;
+                                    blue += b[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).B * 2;
+                                }
+                                else
+                                {
+                                    red += r[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).R * 4;
+                                    green += g[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).G * 4;
+                                    blue += b[i * 3 + j] = img.GetPixel(pixelX[i], pixelY[j]).B * 4;
+                                }
+                            }
+                        }
+
+                        red /= 16;
+                        green /= 16;
+                        blue /= 16;
+
+                        gaussian.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+            }
+
+            img = gaussian;
+            pictureBox2.Image = gaussian;
         }
     }
 }
