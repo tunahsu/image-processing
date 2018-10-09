@@ -53,6 +53,9 @@
             this.button_median = new System.Windows.Forms.Button();
             this.button_mean = new System.Windows.Forms.Button();
             this.button_gaussian = new System.Windows.Forms.Button();
+            this.button_sobel = new System.Windows.Forms.Button();
+            this.comboBox_laplacian = new System.Windows.Forms.ComboBox();
+            this.button_laplacian = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -324,11 +327,48 @@
             this.button_gaussian.UseVisualStyleBackColor = true;
             this.button_gaussian.Click += new System.EventHandler(this.button_gaussian_Click);
             // 
+            // button_sobel
+            // 
+            this.button_sobel.Location = new System.Drawing.Point(785, 352);
+            this.button_sobel.Margin = new System.Windows.Forms.Padding(2);
+            this.button_sobel.Name = "button_sobel";
+            this.button_sobel.Size = new System.Drawing.Size(62, 28);
+            this.button_sobel.TabIndex = 27;
+            this.button_sobel.Text = "Sobel";
+            this.button_sobel.UseVisualStyleBackColor = true;
+            this.button_sobel.Click += new System.EventHandler(this.button_sobel_Click);
+            // 
+            // comboBox_laplacian
+            // 
+            this.comboBox_laplacian.FormattingEnabled = true;
+            this.comboBox_laplacian.Items.AddRange(new object[] {
+            "Laplacian 1",
+            "Laplacian 2",
+            "Laplacian 3"});
+            this.comboBox_laplacian.Location = new System.Drawing.Point(653, 422);
+            this.comboBox_laplacian.Name = "comboBox_laplacian";
+            this.comboBox_laplacian.Size = new System.Drawing.Size(88, 20);
+            this.comboBox_laplacian.TabIndex = 28;
+            // 
+            // button_laplacian
+            // 
+            this.button_laplacian.Location = new System.Drawing.Point(785, 422);
+            this.button_laplacian.Margin = new System.Windows.Forms.Padding(2);
+            this.button_laplacian.Name = "button_laplacian";
+            this.button_laplacian.Size = new System.Drawing.Size(62, 28);
+            this.button_laplacian.TabIndex = 29;
+            this.button_laplacian.Text = "Laplacian";
+            this.button_laplacian.UseVisualStyleBackColor = true;
+            this.button_laplacian.Click += new System.EventHandler(this.button_laplacian_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 574);
+            this.Controls.Add(this.button_laplacian);
+            this.Controls.Add(this.comboBox_laplacian);
+            this.Controls.Add(this.button_sobel);
             this.Controls.Add(this.button_gaussian);
             this.Controls.Add(this.button_mean);
             this.Controls.Add(this.button_median);
@@ -397,6 +437,9 @@
         private System.Windows.Forms.Button button_median;
         private System.Windows.Forms.Button button_mean;
         private System.Windows.Forms.Button button_gaussian;
+        private System.Windows.Forms.Button button_sobel;
+        private System.Windows.Forms.ComboBox comboBox_laplacian;
+        private System.Windows.Forms.Button button_laplacian;
     }
 }
 

@@ -393,5 +393,139 @@ namespace Image_processing
             img = gaussian;
             pictureBox2.Image = gaussian;
         }
+
+        private void button_sobel_Click(object sender, EventArgs e)
+        {
+            Bitmap sobel = new Bitmap(img.Width, img.Height);
+            int[] r = new int[9];
+            int[] g = new int[9];
+            int[] b = new int[9];
+            int[] pixelX = new int[3];
+            int[] pixelY = new int[3];
+            int[] weights_ver = new int[9] { -1, 0, 1, -2, 0, 2, -1, 0, 1 };
+            int[] weights_hor = new int[9] { -1, -2, -1, 0, 0, 0, 1, 2, 1 };
+
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 1; y < img.Height; y++)
+                {
+                    if (x == 0 || x == (img.Width - 1) || y == 0 || y == (img.Height - 1))
+                    {
+                        sobel.SetPixel(x, y, Color.FromArgb(img.GetPixel(x, y).R, img.GetPixel(x, y).G, img.GetPixel(x, y).B));
+                    }
+                    else
+                    {
+                        pixelX[0] = x - 1;
+                        pixelX[1] = x;
+                        pixelX[2] = x + 1;
+                        pixelY[0] = y - 1;
+                        pixelY[1] = y;
+                        pixelY[2] = y + 1;
+
+                        int red_ver = 0;
+                        int green_ver = 0;
+                        int blue_ver = 0;
+                        int red_hor = 0;
+                        int green_hor = 0;
+                        int blue_hor = 0;
+                        int n = 0;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+                            for (int j = 0; j < 3; j++)
+                            {
+                                red_ver += img.GetPixel(pixelX[i], pixelY[j]).R * weights_ver[n];
+                                green_ver += img.GetPixel(pixelX[i], pixelY[j]).G * weights_ver[n];
+                                blue_ver += img.GetPixel(pixelX[i], pixelY[j]).B * weights_ver[n];
+                                red_hor += img.GetPixel(pixelX[i], pixelY[j]).R * weights_hor[n];
+                                green_hor += img.GetPixel(pixelX[i], pixelY[j]).G * weights_hor[n];
+                                blue_hor += img.GetPixel(pixelX[i], pixelY[j]).B * weights_hor[n];
+                                n++;
+                            }
+                        }
+
+                        int red_sobel = ((int)Math.Sqrt(red_ver * red_ver + red_hor * red_hor) > 255) ? 255 : (int)Math.Sqrt(red_ver * red_ver + red_hor * red_hor);
+                        int green_sobel = ((int)Math.Sqrt(green_ver * green_ver + green_hor * green_hor) > 255) ? 255 : (int)Math.Sqrt(green_ver * green_ver + green_hor * green_hor);
+                        int blue_sobel = ((int)Math.Sqrt(blue_ver * blue_ver + blue_hor * blue_hor) > 255) ? 255 : (int)Math.Sqrt(blue_ver * blue_ver + blue_hor * blue_hor);
+
+                        sobel.SetPixel(x, y, Color.FromArgb(red_sobel, green_sobel, blue_sobel));
+                    }
+                }
+            }
+
+            img = sobel;
+            pictureBox2.Image = sobel;
+        }
+
+        private void button_laplacian_Click(object sender, EventArgs e)
+        {
+            Bitmap laplacian = new Bitmap(img.Width, img.Height);
+            int[] r = new int[9];
+            int[] g = new int[9];
+            int[] b = new int[9];
+            int[] pixelX = new int[3];
+            int[] pixelY = new int[3];
+            int[] laplacian_matrix = new int[9];
+
+            switch (comboBox_laplacian.Text)
+            {
+                case "Laplacian 1" :
+                    laplacian_matrix = new int[9] { 0, -1, 0, -1, 4, -1, 0, -1, 0 };
+                    break;
+                case "Laplacian 2":
+                    laplacian_matrix = new int[9] { -1, 1, -1, -1, 8, -1, -1, -1, -1 };
+                    break;
+                case "Laplacian 3":
+                    laplacian_matrix = new int[9] { 1, -2, 1, -2, 4, -2, 1, -2, 1 };
+                    break;
+            }
+            for (int x = 0; x < img.Width; x++)
+            {
+                for (int y = 1; y < img.Height; y++)
+                {
+                    if (x == 0 || x == (img.Width - 1) || y == 0 || y == (img.Height - 1))
+                    {
+                        laplacian.SetPixel(x, y, Color.FromArgb(img.GetPixel(x, y).R, img.GetPixel(x, y).G, img.GetPixel(x, y).B));
+                    }
+                    else
+                    {
+                        pixelX[0] = x - 1;
+                        pixelX[1] = x;
+                        pixelX[2] = x + 1;
+                        pixelY[0] = y - 1;
+                        pixelY[1] = y;
+                        pixelY[2] = y + 1;
+
+                        int red = 0;
+                        int green = 0;
+                        int blue = 0;
+                        int n = 0;
+
+                        for (int i = 0; i < 3; i++)
+                        {
+                            for (int j = 0; j < 3; j++)
+                            {
+                                red += img.GetPixel(pixelX[i], pixelY[j]).R * laplacian_matrix[n];
+                                green += img.GetPixel(pixelX[i], pixelY[j]).G * laplacian_matrix[n];
+                                blue += img.GetPixel(pixelX[i], pixelY[j]).B * laplacian_matrix[n];
+                                n++;
+                            }
+                        }
+
+                        if (red < 0) { red = 0; }
+                        if (red > 255) { red = 255; }
+                        if (green < 0) { green = 0; }
+                        if (green > 255) { green = 255; }
+                        if (blue < 0) { blue = 0; }
+                        if (blue > 255) { blue = 255; }
+
+                        laplacian.SetPixel(x, y, Color.FromArgb(red, green, blue));
+                    }
+                }
+            }
+
+            img = laplacian;
+            pictureBox2.Image = laplacian;
+        }
     }
 }
