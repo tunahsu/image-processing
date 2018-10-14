@@ -1,6 +1,6 @@
 ﻿namespace Image_processing
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -52,7 +52,6 @@
             this.button_retro = new System.Windows.Forms.Button();
             this.button_median = new System.Windows.Forms.Button();
             this.button_mean = new System.Windows.Forms.Button();
-            this.button_gaussian = new System.Windows.Forms.Button();
             this.button_sobel = new System.Windows.Forms.Button();
             this.comboBox_laplacian = new System.Windows.Forms.ComboBox();
             this.button_laplacian = new System.Windows.Forms.Button();
@@ -69,10 +68,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 97);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 90);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(289, 333);
+            this.pictureBox1.Size = new System.Drawing.Size(402, 491);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -80,17 +79,17 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox2.Location = new System.Drawing.Point(335, 97);
+            this.pictureBox2.Location = new System.Drawing.Point(446, 90);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(289, 333);
+            this.pictureBox2.Size = new System.Drawing.Size(402, 491);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             // 
             // button_open
             // 
-            this.button_open.Location = new System.Drawing.Point(27, 18);
+            this.button_open.Location = new System.Drawing.Point(13, 11);
             this.button_open.Margin = new System.Windows.Forms.Padding(2);
             this.button_open.Name = "button_open";
             this.button_open.Size = new System.Drawing.Size(70, 36);
@@ -101,7 +100,7 @@
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(181, 18);
+            this.button_save.Location = new System.Drawing.Point(179, 11);
             this.button_save.Margin = new System.Windows.Forms.Padding(2);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(70, 36);
@@ -112,10 +111,10 @@
             // 
             // button_origin
             // 
-            this.button_origin.Location = new System.Drawing.Point(653, 97);
+            this.button_origin.Location = new System.Drawing.Point(345, 11);
             this.button_origin.Margin = new System.Windows.Forms.Padding(2);
             this.button_origin.Name = "button_origin";
-            this.button_origin.Size = new System.Drawing.Size(62, 28);
+            this.button_origin.Size = new System.Drawing.Size(70, 36);
             this.button_origin.TabIndex = 4;
             this.button_origin.Text = "Origin";
             this.button_origin.UseVisualStyleBackColor = true;
@@ -123,23 +122,27 @@
             // 
             // label_origin
             // 
-            this.label_origin.Location = new System.Drawing.Point(211, 63);
+            this.label_origin.Location = new System.Drawing.Point(329, 56);
             this.label_origin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_origin.Name = "label_origin";
             this.label_origin.Size = new System.Drawing.Size(86, 24);
             this.label_origin.TabIndex = 5;
+            this.label_origin.Text = "0 X 0";
+            this.label_origin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label_result
             // 
-            this.label_result.Location = new System.Drawing.Point(493, 63);
+            this.label_result.Location = new System.Drawing.Point(762, 56);
             this.label_result.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_result.Name = "label_result";
             this.label_result.Size = new System.Drawing.Size(86, 24);
             this.label_result.TabIndex = 6;
+            this.label_result.Text = "0 X 0";
+            this.label_result.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // textBox_width
             // 
-            this.textBox_width.Location = new System.Drawing.Point(785, 18);
+            this.textBox_width.Location = new System.Drawing.Point(494, 11);
             this.textBox_width.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_width.Name = "textBox_width";
             this.textBox_width.Size = new System.Drawing.Size(60, 22);
@@ -147,7 +150,7 @@
             // 
             // textBox_height
             // 
-            this.textBox_height.Location = new System.Drawing.Point(785, 50);
+            this.textBox_height.Location = new System.Drawing.Point(494, 47);
             this.textBox_height.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_height.Name = "textBox_height";
             this.textBox_height.Size = new System.Drawing.Size(60, 22);
@@ -155,7 +158,7 @@
             // 
             // label_width
             // 
-            this.label_width.Location = new System.Drawing.Point(735, 18);
+            this.label_width.Location = new System.Drawing.Point(444, 11);
             this.label_width.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_width.Name = "label_width";
             this.label_width.Size = new System.Drawing.Size(46, 22);
@@ -165,7 +168,7 @@
             // 
             // label_height
             // 
-            this.label_height.Location = new System.Drawing.Point(735, 50);
+            this.label_height.Location = new System.Drawing.Point(444, 47);
             this.label_height.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_height.Name = "label_height";
             this.label_height.Size = new System.Drawing.Size(46, 22);
@@ -175,10 +178,10 @@
             // 
             // button_resize
             // 
-            this.button_resize.Location = new System.Drawing.Point(653, 18);
+            this.button_resize.Location = new System.Drawing.Point(641, 11);
             this.button_resize.Margin = new System.Windows.Forms.Padding(2);
             this.button_resize.Name = "button_resize";
-            this.button_resize.Size = new System.Drawing.Size(62, 52);
+            this.button_resize.Size = new System.Drawing.Size(70, 36);
             this.button_resize.TabIndex = 11;
             this.button_resize.Text = "Resize";
             this.button_resize.UseVisualStyleBackColor = true;
@@ -186,7 +189,7 @@
             // 
             // button_undo
             // 
-            this.button_undo.Location = new System.Drawing.Point(335, 18);
+            this.button_undo.Location = new System.Drawing.Point(778, 11);
             this.button_undo.Margin = new System.Windows.Forms.Padding(2);
             this.button_undo.Name = "button_undo";
             this.button_undo.Size = new System.Drawing.Size(70, 36);
@@ -197,10 +200,10 @@
             // 
             // button_grayscale
             // 
-            this.button_grayscale.Location = new System.Drawing.Point(783, 97);
+            this.button_grayscale.Location = new System.Drawing.Point(881, 90);
             this.button_grayscale.Margin = new System.Windows.Forms.Padding(2);
             this.button_grayscale.Name = "button_grayscale";
-            this.button_grayscale.Size = new System.Drawing.Size(62, 28);
+            this.button_grayscale.Size = new System.Drawing.Size(62, 52);
             this.button_grayscale.TabIndex = 13;
             this.button_grayscale.Text = "Grayscale";
             this.button_grayscale.UseVisualStyleBackColor = true;
@@ -209,10 +212,10 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox3.Location = new System.Drawing.Point(27, 454);
+            this.pictureBox3.Location = new System.Drawing.Point(13, 605);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox3.Size = new System.Drawing.Size(128, 100);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
@@ -220,10 +223,10 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox4.Location = new System.Drawing.Point(131, 454);
+            this.pictureBox4.Location = new System.Drawing.Point(150, 605);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox4.Size = new System.Drawing.Size(128, 100);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -231,10 +234,10 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox5.Location = new System.Drawing.Point(236, 454);
+            this.pictureBox5.Location = new System.Drawing.Point(287, 605);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox5.Size = new System.Drawing.Size(128, 100);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
@@ -242,10 +245,10 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox6.Location = new System.Drawing.Point(544, 454);
+            this.pictureBox6.Location = new System.Drawing.Point(720, 605);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox6.Size = new System.Drawing.Size(128, 100);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
@@ -253,10 +256,10 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox7.Location = new System.Drawing.Point(439, 454);
+            this.pictureBox7.Location = new System.Drawing.Point(583, 605);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox7.Size = new System.Drawing.Size(128, 100);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 18;
             this.pictureBox7.TabStop = false;
@@ -264,20 +267,20 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox8.Location = new System.Drawing.Point(335, 454);
+            this.pictureBox8.Location = new System.Drawing.Point(446, 605);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(80, 80);
+            this.pictureBox8.Size = new System.Drawing.Size(128, 100);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 17;
             this.pictureBox8.TabStop = false;
             // 
             // button_negative
             // 
-            this.button_negative.Location = new System.Drawing.Point(653, 173);
+            this.button_negative.Location = new System.Drawing.Point(995, 90);
             this.button_negative.Margin = new System.Windows.Forms.Padding(2);
             this.button_negative.Name = "button_negative";
-            this.button_negative.Size = new System.Drawing.Size(62, 28);
+            this.button_negative.Size = new System.Drawing.Size(62, 52);
             this.button_negative.TabIndex = 21;
             this.button_negative.Text = "Negative";
             this.button_negative.UseVisualStyleBackColor = true;
@@ -285,10 +288,10 @@
             // 
             // button_retro
             // 
-            this.button_retro.Location = new System.Drawing.Point(785, 173);
+            this.button_retro.Location = new System.Drawing.Point(1109, 90);
             this.button_retro.Margin = new System.Windows.Forms.Padding(2);
             this.button_retro.Name = "button_retro";
-            this.button_retro.Size = new System.Drawing.Size(62, 28);
+            this.button_retro.Size = new System.Drawing.Size(62, 52);
             this.button_retro.TabIndex = 23;
             this.button_retro.Text = "Retro";
             this.button_retro.UseVisualStyleBackColor = true;
@@ -296,10 +299,10 @@
             // 
             // button_median
             // 
-            this.button_median.Location = new System.Drawing.Point(653, 270);
+            this.button_median.Location = new System.Drawing.Point(881, 201);
             this.button_median.Margin = new System.Windows.Forms.Padding(2);
             this.button_median.Name = "button_median";
-            this.button_median.Size = new System.Drawing.Size(62, 28);
+            this.button_median.Size = new System.Drawing.Size(62, 52);
             this.button_median.TabIndex = 24;
             this.button_median.Text = "Median";
             this.button_median.UseVisualStyleBackColor = true;
@@ -307,32 +310,21 @@
             // 
             // button_mean
             // 
-            this.button_mean.Location = new System.Drawing.Point(785, 270);
+            this.button_mean.Location = new System.Drawing.Point(995, 201);
             this.button_mean.Margin = new System.Windows.Forms.Padding(2);
             this.button_mean.Name = "button_mean";
-            this.button_mean.Size = new System.Drawing.Size(62, 28);
+            this.button_mean.Size = new System.Drawing.Size(62, 52);
             this.button_mean.TabIndex = 25;
             this.button_mean.Text = "Mean";
             this.button_mean.UseVisualStyleBackColor = true;
             this.button_mean.Click += new System.EventHandler(this.button_mean_Click);
             // 
-            // button_gaussian
-            // 
-            this.button_gaussian.Location = new System.Drawing.Point(653, 352);
-            this.button_gaussian.Margin = new System.Windows.Forms.Padding(2);
-            this.button_gaussian.Name = "button_gaussian";
-            this.button_gaussian.Size = new System.Drawing.Size(62, 28);
-            this.button_gaussian.TabIndex = 26;
-            this.button_gaussian.Text = "Gaussian";
-            this.button_gaussian.UseVisualStyleBackColor = true;
-            this.button_gaussian.Click += new System.EventHandler(this.button_gaussian_Click);
-            // 
             // button_sobel
             // 
-            this.button_sobel.Location = new System.Drawing.Point(785, 352);
+            this.button_sobel.Location = new System.Drawing.Point(1109, 201);
             this.button_sobel.Margin = new System.Windows.Forms.Padding(2);
             this.button_sobel.Name = "button_sobel";
-            this.button_sobel.Size = new System.Drawing.Size(62, 28);
+            this.button_sobel.Size = new System.Drawing.Size(62, 52);
             this.button_sobel.TabIndex = 27;
             this.button_sobel.Text = "Sobel";
             this.button_sobel.UseVisualStyleBackColor = true;
@@ -345,31 +337,31 @@
             "Laplacian 1",
             "Laplacian 2",
             "Laplacian 3"});
-            this.comboBox_laplacian.Location = new System.Drawing.Point(653, 422);
+            this.comboBox_laplacian.Location = new System.Drawing.Point(981, 341);
             this.comboBox_laplacian.Name = "comboBox_laplacian";
-            this.comboBox_laplacian.Size = new System.Drawing.Size(88, 20);
+            this.comboBox_laplacian.Size = new System.Drawing.Size(108, 20);
             this.comboBox_laplacian.TabIndex = 28;
+            this.comboBox_laplacian.Text = "Laplacian case";
             // 
             // button_laplacian
             // 
-            this.button_laplacian.Location = new System.Drawing.Point(785, 422);
+            this.button_laplacian.Location = new System.Drawing.Point(881, 324);
             this.button_laplacian.Margin = new System.Windows.Forms.Padding(2);
             this.button_laplacian.Name = "button_laplacian";
-            this.button_laplacian.Size = new System.Drawing.Size(62, 28);
+            this.button_laplacian.Size = new System.Drawing.Size(62, 52);
             this.button_laplacian.TabIndex = 29;
             this.button_laplacian.Text = "Laplacian";
             this.button_laplacian.UseVisualStyleBackColor = true;
             this.button_laplacian.Click += new System.EventHandler(this.button_laplacian_Click);
             // 
-            // Form1
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 574);
+            this.ClientSize = new System.Drawing.Size(1202, 725);
             this.Controls.Add(this.button_laplacian);
             this.Controls.Add(this.comboBox_laplacian);
             this.Controls.Add(this.button_sobel);
-            this.Controls.Add(this.button_gaussian);
             this.Controls.Add(this.button_mean);
             this.Controls.Add(this.button_median);
             this.Controls.Add(this.button_retro);
@@ -395,7 +387,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Form1";
+            this.Name = "Main";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -436,7 +428,6 @@
         private System.Windows.Forms.Button button_retro;
         private System.Windows.Forms.Button button_median;
         private System.Windows.Forms.Button button_mean;
-        private System.Windows.Forms.Button button_gaussian;
         private System.Windows.Forms.Button button_sobel;
         private System.Windows.Forms.ComboBox comboBox_laplacian;
         private System.Windows.Forms.Button button_laplacian;
