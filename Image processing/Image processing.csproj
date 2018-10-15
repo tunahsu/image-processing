@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Distribution.cs" />
     <Compile Include="Edge.cs" />
     <Compile Include="Grayscale.cs" />
     <Compile Include="Main.cs">

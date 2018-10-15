@@ -16,12 +16,20 @@ namespace Image_processing
     {
         static Bitmap img = new Bitmap(1, 1);
         static Bitmap img_origin = new Bitmap(1, 1);
-        static int pixel;
         static int pixel_origin;
 
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void change()
+        {
+            Bitmap[] distribution = Distribution.drawDistribution(img);
+            pictureBox6.Image = distribution[2];
+            pictureBox7.Image = distribution[1];
+            pictureBox8.Image = distribution[0];
+            label_result.Text = img.Width.ToString() + " X " + img.Height.ToString();
         }
 
         private void button_open_Click(object sender, EventArgs e) //open file
@@ -47,6 +55,11 @@ namespace Image_processing
                 textBox_width.Text = img.Width.ToString();
                 textBox_height.Text = img.Height.ToString();
                 pixel_origin = img_origin.Width * img_origin.Height;
+
+                Bitmap[] distribution = Distribution.drawDistribution(img);
+                pictureBox3.Image = distribution[2];
+                pictureBox4.Image = distribution[1];
+                pictureBox5.Image = distribution[0];
             }
         }
 
@@ -79,6 +92,8 @@ namespace Image_processing
                 label_result.Text = img.Width.ToString() + " X " + img.Height.ToString();
                 textBox_width.Text = img.Width.ToString();
                 textBox_height.Text = img.Height.ToString();
+
+                change();
             }
             catch
             {
@@ -98,9 +113,10 @@ namespace Image_processing
                 //new size image information
                 label_result.Text = re_width.ToString() + " X " + re_height.ToString();
                 pictureBox2.Image = img;
-                pixel = img.Width * img.Height;
                 textBox_width.Text = img.Width.ToString();
                 textBox_height.Text = img.Height.ToString();
+
+                change();
             }
             catch
             {
@@ -112,30 +128,35 @@ namespace Image_processing
         {
             img = Grayscale.grayscale(img);
             pictureBox2.Image = img;
+            change();
         }
 
         private void button_negative_Click(object sender, EventArgs e)
         {
             img = Negative.negative(img);
             pictureBox2.Image = img;
+            change();
         }
 
         private void button_retro_Click(object sender, EventArgs e)
         {
             img = Retro.retro(img);
             pictureBox2.Image = img;
+            change();
         }
 
         private void button_median_Click(object sender, EventArgs e)
         {
             img = Smoothing.median(img);
             pictureBox2.Image = img;
+            change();
         }
 
         private void button_mean_Click(object sender, EventArgs e)
         {
             img = Smoothing.mean(img);
             pictureBox2.Image = img;
+            change();
         }
 
         private void button_sobel_Click(object sender, EventArgs e)
@@ -143,6 +164,7 @@ namespace Image_processing
             Bitmap sobel = new Bitmap(img.Width, img.Height);
             img = Edge.sobel(sobel, img);
             pictureBox2.Image = img;
+            change();
         }
 
         private void button_laplacian_Click(object sender, EventArgs e)
@@ -150,6 +172,7 @@ namespace Image_processing
             Bitmap laplacian = new Bitmap(img.Width, img.Height);
             img = Edge.laplacian(laplacian, img, comboBox_laplacian.Text);
             pictureBox2.Image = img;
+            change();
         }
     }
 }

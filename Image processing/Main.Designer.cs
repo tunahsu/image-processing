@@ -212,10 +212,10 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox3.Location = new System.Drawing.Point(13, 605);
+            this.pictureBox3.Location = new System.Drawing.Point(13, 594);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox3.Size = new System.Drawing.Size(128, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
@@ -223,10 +223,10 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox4.Location = new System.Drawing.Point(150, 605);
+            this.pictureBox4.Location = new System.Drawing.Point(150, 594);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox4.Size = new System.Drawing.Size(128, 128);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -234,10 +234,10 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox5.Location = new System.Drawing.Point(287, 605);
+            this.pictureBox5.Location = new System.Drawing.Point(287, 594);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox5.Size = new System.Drawing.Size(128, 128);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
@@ -245,10 +245,10 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox6.Location = new System.Drawing.Point(720, 605);
+            this.pictureBox6.Location = new System.Drawing.Point(446, 594);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox6.Size = new System.Drawing.Size(128, 128);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
@@ -256,10 +256,10 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox7.Location = new System.Drawing.Point(583, 605);
+            this.pictureBox7.Location = new System.Drawing.Point(583, 594);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox7.Size = new System.Drawing.Size(128, 128);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 18;
             this.pictureBox7.TabStop = false;
@@ -267,10 +267,10 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox8.Location = new System.Drawing.Point(446, 605);
+            this.pictureBox8.Location = new System.Drawing.Point(720, 594);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(128, 100);
+            this.pictureBox8.Size = new System.Drawing.Size(128, 128);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 17;
             this.pictureBox8.TabStop = false;
@@ -341,7 +341,7 @@
             this.comboBox_laplacian.Name = "comboBox_laplacian";
             this.comboBox_laplacian.Size = new System.Drawing.Size(108, 20);
             this.comboBox_laplacian.TabIndex = 28;
-            this.comboBox_laplacian.Text = "Laplacian case";
+            this.comboBox_laplacian.Text = "Laplacian 1";
             // 
             // button_laplacian
             // 
@@ -358,7 +358,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1202, 725);
+            this.ClientSize = new System.Drawing.Size(1202, 734);
             this.Controls.Add(this.button_laplacian);
             this.Controls.Add(this.comboBox_laplacian);
             this.Controls.Add(this.button_sobel);
