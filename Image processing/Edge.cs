@@ -99,7 +99,7 @@ namespace Image_processing
                     laplacian_matrix = new int[,] { { 0, -1, 0 }, { -1, 4, -1 }, { 0, -1, 0 } };
                     break;
                 case "Laplacian 2":
-                    laplacian_matrix = new int[,] { { -1, 1, -1 }, { -1, 8, -1 }, { -1, -1, -1 } };
+                    laplacian_matrix = new int[,] { { -1, -1, -1 }, { -1, 8, -1 }, { -1, -1, -1 } };
                     break;
                 case "Laplacian 3":
                     laplacian_matrix = new int[,] { { 1, -2, 1 }, { -2, 4, -2 }, { 1, -2, 1 } };

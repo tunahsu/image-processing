@@ -53,29 +53,17 @@ namespace Image_processing
 
                 for(int x = 0; x < 256; x++)
                 {
-                    for(int y = 199; y >= 0; y--)
+                    for (int y = 199; y >= 199 - rgb_count[0, x]; y--)
                     {
-                        if(rgb_count[0, x] != 0)
-                        {
-                            rgb[0].SetPixel(x, y, Color.Blue);
-                            rgb_count[0, x]--;
-                        }                     
+                        rgb[0].SetPixel(x, y, Color.Blue);
                     }
-                    for (int y = 199; y >= 0; y--)
+                    for (int y = 199; y >= 199 - rgb_count[1, x]; y--)
                     {
-                        if (rgb_count[1, x] != 0)
-                        {
-                            rgb[1].SetPixel(x, y, Color.Green);
-                            rgb_count[1, x]--;
-                        }
+                        rgb[1].SetPixel(x, y, Color.Green);
                     }
-                    for (int y = 199; y >= 0; y--)
+                    for (int y = 199; y >= 199 - rgb_count[2, x]; y--)
                     {
-                        if (rgb_count[2, x] != 0)
-                        {
-                            rgb[2].SetPixel(x, y, Color.Red);
-                            rgb_count[2, x]--;
-                        }
+                        rgb[2].SetPixel(x, y, Color.Red);
                     }
                 }
             }

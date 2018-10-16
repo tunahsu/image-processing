@@ -55,6 +55,8 @@
             this.button_sobel = new System.Windows.Forms.Button();
             this.comboBox_laplacian = new System.Windows.Forms.ComboBox();
             this.button_laplacian = new System.Windows.Forms.Button();
+            this.button_sharpen = new System.Windows.Forms.Button();
+            this.button_histogramEqualization = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,7 +73,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(13, 90);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(402, 491);
+            this.pictureBox1.Size = new System.Drawing.Size(404, 491);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -82,7 +84,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(446, 90);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(402, 491);
+            this.pictureBox2.Size = new System.Drawing.Size(404, 491);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -215,7 +217,7 @@
             this.pictureBox3.Location = new System.Drawing.Point(13, 594);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox3.Size = new System.Drawing.Size(130, 128);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
@@ -226,7 +228,7 @@
             this.pictureBox4.Location = new System.Drawing.Point(150, 594);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox4.Size = new System.Drawing.Size(130, 128);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 15;
             this.pictureBox4.TabStop = false;
@@ -234,10 +236,10 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox5.Location = new System.Drawing.Point(287, 594);
+            this.pictureBox5.Location = new System.Drawing.Point(287, 595);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox5.Size = new System.Drawing.Size(130, 128);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 16;
             this.pictureBox5.TabStop = false;
@@ -245,10 +247,10 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox6.Location = new System.Drawing.Point(446, 594);
+            this.pictureBox6.Location = new System.Drawing.Point(446, 595);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox6.Size = new System.Drawing.Size(130, 128);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox6.TabIndex = 19;
             this.pictureBox6.TabStop = false;
@@ -259,7 +261,7 @@
             this.pictureBox7.Location = new System.Drawing.Point(583, 594);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox7.Size = new System.Drawing.Size(130, 128);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 18;
             this.pictureBox7.TabStop = false;
@@ -267,10 +269,10 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox8.Location = new System.Drawing.Point(720, 594);
+            this.pictureBox8.Location = new System.Drawing.Point(720, 595);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(128, 128);
+            this.pictureBox8.Size = new System.Drawing.Size(130, 128);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 17;
             this.pictureBox8.TabStop = false;
@@ -354,11 +356,35 @@
             this.button_laplacian.UseVisualStyleBackColor = true;
             this.button_laplacian.Click += new System.EventHandler(this.button_laplacian_Click);
             // 
+            // button_sharpen
+            // 
+            this.button_sharpen.Location = new System.Drawing.Point(881, 437);
+            this.button_sharpen.Margin = new System.Windows.Forms.Padding(2);
+            this.button_sharpen.Name = "button_sharpen";
+            this.button_sharpen.Size = new System.Drawing.Size(62, 52);
+            this.button_sharpen.TabIndex = 30;
+            this.button_sharpen.Text = "Sharpen";
+            this.button_sharpen.UseVisualStyleBackColor = true;
+            this.button_sharpen.Click += new System.EventHandler(this.button_sharpen_Click);
+            // 
+            // button_histogramEqualization
+            // 
+            this.button_histogramEqualization.Location = new System.Drawing.Point(995, 437);
+            this.button_histogramEqualization.Margin = new System.Windows.Forms.Padding(2);
+            this.button_histogramEqualization.Name = "button_histogramEqualization";
+            this.button_histogramEqualization.Size = new System.Drawing.Size(62, 52);
+            this.button_histogramEqualization.TabIndex = 31;
+            this.button_histogramEqualization.Text = "H_E";
+            this.button_histogramEqualization.UseVisualStyleBackColor = true;
+            this.button_histogramEqualization.Click += new System.EventHandler(this.button_histogramEqualization_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1202, 734);
+            this.Controls.Add(this.button_histogramEqualization);
+            this.Controls.Add(this.button_sharpen);
             this.Controls.Add(this.button_laplacian);
             this.Controls.Add(this.comboBox_laplacian);
             this.Controls.Add(this.button_sobel);
@@ -388,7 +414,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
-            this.Text = "Form1";
+            this.Text = " ";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -431,6 +457,8 @@
         private System.Windows.Forms.Button button_sobel;
         private System.Windows.Forms.ComboBox comboBox_laplacian;
         private System.Windows.Forms.Button button_laplacian;
+        private System.Windows.Forms.Button button_sharpen;
+        private System.Windows.Forms.Button button_histogramEqualization;
     }
 }
 

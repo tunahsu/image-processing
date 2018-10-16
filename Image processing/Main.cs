@@ -174,5 +174,20 @@ namespace Image_processing
             pictureBox2.Image = img;
             change();
         }
+
+        private void button_sharpen_Click(object sender, EventArgs e)
+        {
+            Bitmap sharpen = new Bitmap(img.Width, img.Height);
+            img = Sharpen.sharpen(Edge.laplacian(sharpen, img, "Laplacian 2"), img_origin);
+            pictureBox2.Image = img;
+            change();
+        }
+
+        private void button_histogramEqualization_Click(object sender, EventArgs e)
+        {
+            img = Histogram_Equalization.Balance(img);
+            pictureBox2.Image = img;
+            change();
+        }
     }
 }
