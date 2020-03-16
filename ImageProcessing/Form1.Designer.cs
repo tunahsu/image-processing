@@ -29,68 +29,69 @@
         private void InitializeComponent()
         {
             this.pictureBox_origin = new System.Windows.Forms.PictureBox();
-            this.pictureBox_originR = new System.Windows.Forms.PictureBox();
-            this.pictureBox_originG = new System.Windows.Forms.PictureBox();
-            this.pictureBox_originB = new System.Windows.Forms.PictureBox();
+            this.pictureBox_originRB = new System.Windows.Forms.PictureBox();
+            this.pictureBox_originGB = new System.Windows.Forms.PictureBox();
+            this.pictureBox_originBB = new System.Windows.Forms.PictureBox();
             this.button_open = new System.Windows.Forms.Button();
             this.button_save = new System.Windows.Forms.Button();
             this.label_origin_size = new System.Windows.Forms.Label();
-            this.pictureBox_originRBand = new System.Windows.Forms.PictureBox();
-            this.pictureBox_originGBand = new System.Windows.Forms.PictureBox();
-            this.pictureBox_originBBand = new System.Windows.Forms.PictureBox();
+            this.pictureBox_originRH = new System.Windows.Forms.PictureBox();
+            this.pictureBox_originGH = new System.Windows.Forms.PictureBox();
+            this.pictureBox_originBH = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originR)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRBand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGBand)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBBand)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBH)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_origin
             // 
             this.pictureBox_origin.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox_origin.Location = new System.Drawing.Point(41, 93);
+            this.pictureBox_origin.Location = new System.Drawing.Point(23, 92);
             this.pictureBox_origin.Name = "pictureBox_origin";
-            this.pictureBox_origin.Size = new System.Drawing.Size(320, 320);
+            this.pictureBox_origin.Size = new System.Drawing.Size(380, 320);
             this.pictureBox_origin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_origin.TabIndex = 0;
             this.pictureBox_origin.TabStop = false;
             // 
-            // pictureBox_originR
+            // pictureBox_originRB
             // 
-            this.pictureBox_originR.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox_originR.Location = new System.Drawing.Point(41, 430);
-            this.pictureBox_originR.Name = "pictureBox_originR";
-            this.pictureBox_originR.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox_originR.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_originR.TabIndex = 1;
-            this.pictureBox_originR.TabStop = false;
+            this.pictureBox_originRB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_originRB.Location = new System.Drawing.Point(23, 422);
+            this.pictureBox_originRB.Name = "pictureBox_originRB";
+            this.pictureBox_originRB.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_originRB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_originRB.TabIndex = 1;
+            this.pictureBox_originRB.TabStop = false;
             // 
-            // pictureBox_originG
+            // pictureBox_originGB
             // 
-            this.pictureBox_originG.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox_originG.Location = new System.Drawing.Point(151, 430);
-            this.pictureBox_originG.Name = "pictureBox_originG";
-            this.pictureBox_originG.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox_originG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_originG.TabIndex = 2;
-            this.pictureBox_originG.TabStop = false;
+            this.pictureBox_originGB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_originGB.Location = new System.Drawing.Point(153, 422);
+            this.pictureBox_originGB.Name = "pictureBox_originGB";
+            this.pictureBox_originGB.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_originGB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_originGB.TabIndex = 2;
+            this.pictureBox_originGB.TabStop = false;
             // 
-            // pictureBox_originB
+            // pictureBox_originBB
             // 
-            this.pictureBox_originB.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox_originB.Location = new System.Drawing.Point(261, 430);
-            this.pictureBox_originB.Name = "pictureBox_originB";
-            this.pictureBox_originB.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox_originB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_originB.TabIndex = 3;
-            this.pictureBox_originB.TabStop = false;
+            this.pictureBox_originBB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_originBB.Location = new System.Drawing.Point(283, 422);
+            this.pictureBox_originBB.Name = "pictureBox_originBB";
+            this.pictureBox_originBB.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_originBB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_originBB.TabIndex = 3;
+            this.pictureBox_originBB.TabStop = false;
             // 
             // button_open
             // 
             this.button_open.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_open.Location = new System.Drawing.Point(41, 22);
+            this.button_open.Location = new System.Drawing.Point(23, 24);
             this.button_open.Name = "button_open";
             this.button_open.Size = new System.Drawing.Size(100, 30);
             this.button_open.TabIndex = 4;
@@ -101,7 +102,7 @@
             // button_save
             // 
             this.button_save.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_save.Location = new System.Drawing.Point(261, 22);
+            this.button_save.Location = new System.Drawing.Point(153, 24);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(100, 30);
             this.button_save.TabIndex = 5;
@@ -112,67 +113,78 @@
             // label_origin_size
             // 
             this.label_origin_size.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label_origin_size.Location = new System.Drawing.Point(261, 64);
+            this.label_origin_size.Location = new System.Drawing.Point(303, 66);
             this.label_origin_size.Name = "label_origin_size";
             this.label_origin_size.Size = new System.Drawing.Size(100, 23);
             this.label_origin_size.TabIndex = 6;
             this.label_origin_size.Text = "0 X 0";
             this.label_origin_size.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // pictureBox_originRBand
+            // pictureBox_originRH
             // 
-            this.pictureBox_originRBand.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox_originRBand.Location = new System.Drawing.Point(41, 551);
-            this.pictureBox_originRBand.Name = "pictureBox_originRBand";
-            this.pictureBox_originRBand.Size = new System.Drawing.Size(190, 100);
-            this.pictureBox_originRBand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_originRBand.TabIndex = 7;
-            this.pictureBox_originRBand.TabStop = false;
+            this.pictureBox_originRH.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_originRH.Location = new System.Drawing.Point(23, 532);
+            this.pictureBox_originRH.Name = "pictureBox_originRH";
+            this.pictureBox_originRH.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_originRH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_originRH.TabIndex = 7;
+            this.pictureBox_originRH.TabStop = false;
             // 
-            // pictureBox_originGBand
+            // pictureBox_originGH
             // 
-            this.pictureBox_originGBand.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox_originGBand.Location = new System.Drawing.Point(41, 657);
-            this.pictureBox_originGBand.Name = "pictureBox_originGBand";
-            this.pictureBox_originGBand.Size = new System.Drawing.Size(190, 100);
-            this.pictureBox_originGBand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_originGBand.TabIndex = 8;
-            this.pictureBox_originGBand.TabStop = false;
+            this.pictureBox_originGH.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_originGH.Location = new System.Drawing.Point(153, 532);
+            this.pictureBox_originGH.Name = "pictureBox_originGH";
+            this.pictureBox_originGH.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_originGH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_originGH.TabIndex = 8;
+            this.pictureBox_originGH.TabStop = false;
             // 
-            // pictureBox_originBBand
+            // pictureBox_originBH
             // 
-            this.pictureBox_originBBand.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.pictureBox_originBBand.Location = new System.Drawing.Point(41, 763);
-            this.pictureBox_originBBand.Name = "pictureBox_originBBand";
-            this.pictureBox_originBBand.Size = new System.Drawing.Size(190, 100);
-            this.pictureBox_originBBand.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_originBBand.TabIndex = 9;
-            this.pictureBox_originBBand.TabStop = false;
+            this.pictureBox_originBH.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_originBH.Location = new System.Drawing.Point(283, 532);
+            this.pictureBox_originBH.Name = "pictureBox_originBH";
+            this.pictureBox_originBH.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_originBH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_originBH.TabIndex = 9;
+            this.pictureBox_originBH.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(20, 66);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Origin";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1225, 875);
-            this.Controls.Add(this.pictureBox_originBBand);
-            this.Controls.Add(this.pictureBox_originGBand);
-            this.Controls.Add(this.pictureBox_originRBand);
+            this.ClientSize = new System.Drawing.Size(1254, 680);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox_originBH);
+            this.Controls.Add(this.pictureBox_originGH);
+            this.Controls.Add(this.pictureBox_originRH);
             this.Controls.Add(this.label_origin_size);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.button_open);
-            this.Controls.Add(this.pictureBox_originB);
-            this.Controls.Add(this.pictureBox_originG);
-            this.Controls.Add(this.pictureBox_originR);
+            this.Controls.Add(this.pictureBox_originBB);
+            this.Controls.Add(this.pictureBox_originGB);
+            this.Controls.Add(this.pictureBox_originRB);
             this.Controls.Add(this.pictureBox_origin);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originR)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRBand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGBand)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBBand)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,15 +192,16 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox_origin;
-        private System.Windows.Forms.PictureBox pictureBox_originR;
-        private System.Windows.Forms.PictureBox pictureBox_originG;
-        private System.Windows.Forms.PictureBox pictureBox_originB;
+        private System.Windows.Forms.PictureBox pictureBox_originRB;
+        private System.Windows.Forms.PictureBox pictureBox_originGB;
+        private System.Windows.Forms.PictureBox pictureBox_originBB;
         private System.Windows.Forms.Button button_open;
         private System.Windows.Forms.Button button_save;
         private System.Windows.Forms.Label label_origin_size;
-        private System.Windows.Forms.PictureBox pictureBox_originRBand;
-        private System.Windows.Forms.PictureBox pictureBox_originGBand;
-        private System.Windows.Forms.PictureBox pictureBox_originBBand;
+        private System.Windows.Forms.PictureBox pictureBox_originRH;
+        private System.Windows.Forms.PictureBox pictureBox_originGH;
+        private System.Windows.Forms.PictureBox pictureBox_originBH;
+        private System.Windows.Forms.Label label1;
     }
 }
 

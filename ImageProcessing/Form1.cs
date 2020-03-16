@@ -23,127 +23,25 @@ namespace ImageProcessing
 
         private void initForm()
         {
-            pictureBox_originR.Image = null;
-            pictureBox_originG.Image = null;
-            pictureBox_originB.Image = null;
+            pictureBox_originRB.Image = null;
+            pictureBox_originGB.Image = null;
+            pictureBox_originBB.Image = null;
             label_origin_size.Text = "0 X 0";
-        }
-
-        private void showBand()
-        {
-
-        }
-
-        public static int[,,] getRGB(Bitmap bitimg)
-        {
-            int width = bitimg.Width;
-            int height = bitimg.Height;
-
-            BitmapData bitmap_data = bitimg.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.ReadOnly, PixelFormat.Format24bppRgb);
-            IntPtr img_ptr = bitmap_data.Scan0;
-            int stride = bitmap_data.Stride;
-            int width_byte = width * 3;
-            int skip_byte = stride - width_byte;
-            int[,,] rgb_data = new int[height, width, 3];
-
-            unsafe
-            {
-                byte* p = (byte*)img_ptr;
-                for(int j = 0; j < height; j++)
-                {
-                    for (int i = 0; i < width; i++)
-                    {
-                        //B
-                        rgb_data[j, i, 2] = p[0];
-                        p++;
-                        //G
-                        rgb_data[j, i, 1] = p[0];
-                        p++;
-                        //R
-                        rgb_data[j, i, 0] = p[0];
-                        p++;
-                    }
-                    p += skip_byte;
-                }
-            }
-            bitimg.UnlockBits(bitmap_data);
-            return rgb_data;
-        }
-
-        public static Bitmap setRGB(int[,,] rgb_data)
-        {
-            Bitmap bitimg;
-            int width = rgb_data.GetLength(0);
-            int height = rgb_data.GetLength(1);
-
-            bitimg = new Bitmap(width, height, PixelFormat.Format24bppRgb);
-            BitmapData bitmap_data = bitimg.LockBits(new Rectangle(0, 0, width, height), ImageLockMode.WriteOnly, PixelFormat.Format24bppRgb);
-            IntPtr img_ptr = bitmap_data.Scan0;
-            int stride = bitmap_data.Stride;
-            int width_byte = width * 3;
-            int skip_byte = stride - width_byte;
-
-            unsafe
-            {
-                byte* p = (byte*)img_ptr;
-                for (int j = 0; j < height; j++)
-                {
-                    for (int i = 0; i < width; i++)
-                    {
-                        //B
-                        p[0] = (byte)rgb_data[j, i, 2];
-                        p++;
-                        //G
-                        p[0] = (byte)rgb_data[j, i, 1];
-                        p++;
-                        //R
-                        p[0] = (byte)rgb_data[j, i, 0];
-                        p++;
-                    }
-                    p += skip_byte;
-                }
-            }
-            bitimg.UnlockBits(bitmap_data);
-            return bitimg;
         }
 
         private void showBand(Bitmap img)
         {
-            int[,,] rgb = getRGB(img);
-            int width = img.Width;
-            int height = img.Height;
+            // show RGB bands
+            Tuple<int[,,], int[,,], int[,,]> bands = ImageRW.getBand(img);
+            pictureBox_originRB.Image = ImageRW.setRGB(bands.Item1);
+            pictureBox_originGB.Image = ImageRW.setRGB(bands.Item2);
+            pictureBox_originBB.Image = ImageRW.setRGB(bands.Item3);
 
-            int temp = 0;
-            int[,,] RBand = new int[height, width, 3];
-            int[,,] GBand = new int[height, width, 3];
-            int[,,] BBand = new int[height, width, 3];
-        
-            for(int j = 0; j < height; j++)
-            {
-                for(int i = 0; i < width; i++)
-                {
-                    //set R
-                    temp = rgb[j, i, 0];
-                    RBand[j, i, 0] = temp;
-                    RBand[j, i, 1] = temp;
-                    RBand[j, i, 2] = temp;
-
-                    //set G
-                    temp = rgb[j, i, 1];
-                    GBand[j, i, 0] = temp;
-                    GBand[j, i, 1] = temp;
-                    GBand[j, i, 2] = temp;
-
-                    //set B
-                    temp = rgb[j, i, 2];
-                    BBand[j, i, 0] = temp;
-                    BBand[j, i, 1] = temp;
-                    BBand[j, i, 2] = temp;
-                }
-            }
-            pictureBox_originR.Image = setRGB(RBand);
-            pictureBox_originG.Image = setRGB(GBand);
-            pictureBox_originB.Image = setRGB(BBand);
+            // show histogram of  RGB bands
+            Tuple<Bitmap, Bitmap, Bitmap> histograms = ImageRW.getHistogram(img);
+            pictureBox_originRH.Image = histograms.Item1;
+            pictureBox_originGH.Image = histograms.Item2;
+            pictureBox_originBH.Image = histograms.Item3;
         }
 
         private void button_open_Click(object sender, EventArgs e)
@@ -152,23 +50,21 @@ namespace ImageProcessing
 
             openImg.Title = "Open Image File";
             openImg.Filter = "All files (*.jpg)|*.*|All files (*.*)|*.*";
-            //openImg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //set default path = desktop
+            // openImg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop); //set default path = desktop
             openImg.RestoreDirectory = true;
 
             if (openImg.ShowDialog() == DialogResult.OK)
             {
+                // initialize
                 initForm();
 
-                //create image
+                // create image
                 img = new Bitmap(Image.FromFile(openImg.FileName));
-                //img_origin = img_origin.Clone(new Rectangle(0, 0, img_origin.Width, img_origin.Height), PixelFormat.Format24bppRgb);
                 img_origin = new Bitmap(img);
 
-                //set image information
+                // set image information
                 pictureBox_origin.Image = img_origin;
-                //pictureBox2.Image = null;
                 label_origin_size.Text = img_origin.Width.ToString() + " X " + img.Height.ToString();
-
                 showBand(img_origin);
             }
 
