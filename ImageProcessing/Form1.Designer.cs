@@ -39,6 +39,15 @@
             this.pictureBox_originGH = new System.Windows.Forms.PictureBox();
             this.pictureBox_originBH = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox_resultBH = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resultGH = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resultRH = new System.Windows.Forms.PictureBox();
+            this.label_result_size = new System.Windows.Forms.Label();
+            this.pictureBox_resultBB = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resultGB = new System.Windows.Forms.PictureBox();
+            this.pictureBox_resultRB = new System.Windows.Forms.PictureBox();
+            this.pictureBox_result = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGB)).BeginInit();
@@ -46,6 +55,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultBH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultGH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultRH)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultBB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultGB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultRB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_result)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_origin
@@ -160,11 +176,110 @@
             this.label1.Text = "Origin";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label2.Location = new System.Drawing.Point(426, 66);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 23);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Result";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pictureBox_resultBH
+            // 
+            this.pictureBox_resultBH.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_resultBH.Location = new System.Drawing.Point(689, 532);
+            this.pictureBox_resultBH.Name = "pictureBox_resultBH";
+            this.pictureBox_resultBH.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_resultBH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_resultBH.TabIndex = 18;
+            this.pictureBox_resultBH.TabStop = false;
+            // 
+            // pictureBox_resultGH
+            // 
+            this.pictureBox_resultGH.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_resultGH.Location = new System.Drawing.Point(559, 532);
+            this.pictureBox_resultGH.Name = "pictureBox_resultGH";
+            this.pictureBox_resultGH.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_resultGH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_resultGH.TabIndex = 17;
+            this.pictureBox_resultGH.TabStop = false;
+            // 
+            // pictureBox_resultRH
+            // 
+            this.pictureBox_resultRH.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_resultRH.Location = new System.Drawing.Point(429, 532);
+            this.pictureBox_resultRH.Name = "pictureBox_resultRH";
+            this.pictureBox_resultRH.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_resultRH.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_resultRH.TabIndex = 16;
+            this.pictureBox_resultRH.TabStop = false;
+            // 
+            // label_result_size
+            // 
+            this.label_result_size.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label_result_size.Location = new System.Drawing.Point(709, 66);
+            this.label_result_size.Name = "label_result_size";
+            this.label_result_size.Size = new System.Drawing.Size(100, 23);
+            this.label_result_size.TabIndex = 15;
+            this.label_result_size.Text = "0 X 0";
+            this.label_result_size.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // pictureBox_resultBB
+            // 
+            this.pictureBox_resultBB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_resultBB.Location = new System.Drawing.Point(689, 422);
+            this.pictureBox_resultBB.Name = "pictureBox_resultBB";
+            this.pictureBox_resultBB.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_resultBB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_resultBB.TabIndex = 14;
+            this.pictureBox_resultBB.TabStop = false;
+            // 
+            // pictureBox_resultGB
+            // 
+            this.pictureBox_resultGB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_resultGB.Location = new System.Drawing.Point(559, 422);
+            this.pictureBox_resultGB.Name = "pictureBox_resultGB";
+            this.pictureBox_resultGB.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_resultGB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_resultGB.TabIndex = 13;
+            this.pictureBox_resultGB.TabStop = false;
+            // 
+            // pictureBox_resultRB
+            // 
+            this.pictureBox_resultRB.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.pictureBox_resultRB.Location = new System.Drawing.Point(429, 422);
+            this.pictureBox_resultRB.Name = "pictureBox_resultRB";
+            this.pictureBox_resultRB.Size = new System.Drawing.Size(120, 100);
+            this.pictureBox_resultRB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_resultRB.TabIndex = 12;
+            this.pictureBox_resultRB.TabStop = false;
+            // 
+            // pictureBox_result
+            // 
+            this.pictureBox_result.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox_result.Location = new System.Drawing.Point(429, 92);
+            this.pictureBox_result.Name = "pictureBox_result";
+            this.pictureBox_result.Size = new System.Drawing.Size(380, 320);
+            this.pictureBox_result.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_result.TabIndex = 11;
+            this.pictureBox_result.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 680);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox_resultBH);
+            this.Controls.Add(this.pictureBox_resultGH);
+            this.Controls.Add(this.pictureBox_resultRH);
+            this.Controls.Add(this.label_result_size);
+            this.Controls.Add(this.pictureBox_resultBB);
+            this.Controls.Add(this.pictureBox_resultGB);
+            this.Controls.Add(this.pictureBox_resultRB);
+            this.Controls.Add(this.pictureBox_result);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox_originBH);
             this.Controls.Add(this.pictureBox_originGH);
@@ -185,6 +300,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originBH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultBH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultGH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultRH)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultBB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultGB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultRB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_result)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,6 +324,15 @@
         private System.Windows.Forms.PictureBox pictureBox_originGH;
         private System.Windows.Forms.PictureBox pictureBox_originBH;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox_resultBH;
+        private System.Windows.Forms.PictureBox pictureBox_resultGH;
+        private System.Windows.Forms.PictureBox pictureBox_resultRH;
+        private System.Windows.Forms.Label label_result_size;
+        private System.Windows.Forms.PictureBox pictureBox_resultBB;
+        private System.Windows.Forms.PictureBox pictureBox_resultGB;
+        private System.Windows.Forms.PictureBox pictureBox_resultRB;
+        private System.Windows.Forms.PictureBox pictureBox_result;
     }
 }
 
