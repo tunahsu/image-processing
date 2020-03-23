@@ -48,6 +48,12 @@
             this.pictureBox_resultGB = new System.Windows.Forms.PictureBox();
             this.pictureBox_resultRB = new System.Windows.Forms.PictureBox();
             this.pictureBox_result = new System.Windows.Forms.PictureBox();
+            this.button_grayscale = new System.Windows.Forms.Button();
+            this.comboBox_grayscale = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGB)).BeginInit();
@@ -62,6 +68,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultGB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultRB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_result)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox_origin
@@ -266,11 +273,59 @@
             this.pictureBox_result.TabIndex = 11;
             this.pictureBox_result.TabStop = false;
             // 
+            // button_grayscale
+            // 
+            this.button_grayscale.Enabled = false;
+            this.button_grayscale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button_grayscale.Location = new System.Drawing.Point(984, 133);
+            this.button_grayscale.Name = "button_grayscale";
+            this.button_grayscale.Size = new System.Drawing.Size(100, 30);
+            this.button_grayscale.TabIndex = 26;
+            this.button_grayscale.Text = "Go";
+            this.button_grayscale.UseVisualStyleBackColor = true;
+            this.button_grayscale.Click += new System.EventHandler(this.button_grayscale_Click);
+            // 
+            // comboBox_grayscale
+            // 
+            this.comboBox_grayscale.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBox_grayscale.FormattingEnabled = true;
+            this.comboBox_grayscale.Items.AddRange(new object[] {
+            "Mean",
+            "Weight",
+            "Max"});
+            this.comboBox_grayscale.Location = new System.Drawing.Point(862, 135);
+            this.comboBox_grayscale.Name = "comboBox_grayscale";
+            this.comboBox_grayscale.Size = new System.Drawing.Size(97, 28);
+            this.comboBox_grayscale.TabIndex = 27;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.pictureBox1.Location = new System.Drawing.Point(843, 118);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(262, 62);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(840, 92);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 23);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Grayscale";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 680);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.comboBox_grayscale);
+            this.Controls.Add(this.button_grayscale);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox_resultBH);
             this.Controls.Add(this.pictureBox_resultGH);
@@ -291,6 +346,7 @@
             this.Controls.Add(this.pictureBox_originGB);
             this.Controls.Add(this.pictureBox_originRB);
             this.Controls.Add(this.pictureBox_origin);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).EndInit();
@@ -307,6 +363,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultGB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_resultRB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_result)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -333,6 +390,12 @@
         private System.Windows.Forms.PictureBox pictureBox_resultGB;
         private System.Windows.Forms.PictureBox pictureBox_resultRB;
         private System.Windows.Forms.PictureBox pictureBox_result;
+        private System.Windows.Forms.Button button_grayscale;
+        private System.Windows.Forms.ComboBox comboBox_grayscale;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }
 
