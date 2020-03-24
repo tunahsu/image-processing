@@ -6,7 +6,7 @@ namespace ImageProcessing
 {
 	public class ImageRW
 	{
-        public static int[,,] getRGB(Bitmap img)
+        public static int[,,] GetRGB(Bitmap img)
         {
             int width = img.Width;
             int height = img.Height;
@@ -44,7 +44,7 @@ namespace ImageProcessing
             return rgb_data;
         }
 
-        public static Bitmap setRGB(int[,,] rgb_data)
+        public static Bitmap SetRGB(int[,,] rgb_data)
         {
             Bitmap img;
             int width = rgb_data.GetLength(1);
@@ -84,7 +84,7 @@ namespace ImageProcessing
 
         public static Tuple<int[,,], int[,,], int[,,]>  getBand(Bitmap img)
         {
-            int[,,] rgb = getRGB(img);
+            int[,,] rgb = GetRGB(img);
             int width = img.Width;
             int height = img.Height;
 

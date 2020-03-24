@@ -54,6 +54,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.button_undo = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGB)).BeginInit();
@@ -277,7 +279,7 @@
             // 
             this.button_grayscale.Enabled = false;
             this.button_grayscale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_grayscale.Location = new System.Drawing.Point(984, 133);
+            this.button_grayscale.Location = new System.Drawing.Point(1021, 133);
             this.button_grayscale.Name = "button_grayscale";
             this.button_grayscale.Size = new System.Drawing.Size(100, 30);
             this.button_grayscale.TabIndex = 26;
@@ -290,12 +292,15 @@
             this.comboBox_grayscale.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.comboBox_grayscale.FormattingEnabled = true;
             this.comboBox_grayscale.Items.AddRange(new object[] {
-            "Mean",
-            "Weight",
-            "Max"});
+            "Mean-Value",
+            "Mean-Weight",
+            "Maximum",
+            "Negative",
+            "Log-Transform",
+            "Power-Law"});
             this.comboBox_grayscale.Location = new System.Drawing.Point(862, 135);
             this.comboBox_grayscale.Name = "comboBox_grayscale";
-            this.comboBox_grayscale.Size = new System.Drawing.Size(97, 28);
+            this.comboBox_grayscale.Size = new System.Drawing.Size(143, 28);
             this.comboBox_grayscale.TabIndex = 27;
             // 
             // pictureBox1
@@ -303,7 +308,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.pictureBox1.Location = new System.Drawing.Point(843, 118);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(298, 98);
             this.pictureBox1.TabIndex = 28;
             this.pictureBox1.TabStop = false;
             // 
@@ -318,11 +323,36 @@
             this.label3.Text = "Grayscale";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button_undo
+            // 
+            this.button_undo.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button_undo.Location = new System.Drawing.Point(709, 24);
+            this.button_undo.Name = "button_undo";
+            this.button_undo.Size = new System.Drawing.Size(100, 30);
+            this.button_undo.TabIndex = 30;
+            this.button_undo.Text = "Undo";
+            this.button_undo.UseVisualStyleBackColor = true;
+            this.button_undo.Click += new System.EventHandler(this.button_undo_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "gamma=0.4",
+            "gamma=2.5"});
+            this.comboBox1.Location = new System.Drawing.Point(862, 171);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(129, 28);
+            this.comboBox1.TabIndex = 31;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 680);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button_undo);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox_grayscale);
             this.Controls.Add(this.button_grayscale);
@@ -396,6 +426,8 @@
         private System.Windows.Forms.Label label3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.Windows.Forms.Button button_undo;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

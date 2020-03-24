@@ -15,6 +15,7 @@ namespace ImageProcessing
     {
         static Bitmap img = new Bitmap(1, 1);
         static Bitmap img_origin = new Bitmap(1, 1);
+        static Stack<Bitmap> img_stack = new Stack<Bitmap>();
 
         public Form1()
         {
@@ -23,20 +24,47 @@ namespace ImageProcessing
 
         private void initForm()
         {
-            pictureBox_originRB.Image = null;
-            pictureBox_originGB.Image = null;
-            pictureBox_originBB.Image = null;
             comboBox_grayscale.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
             button_grayscale.Enabled = true;
+        }
+
+        private void clearResult()
+        {
+            pictureBox_result.Image = null;
+            pictureBox_resultRB.Image = null;
+            pictureBox_resultGB.Image = null;
+            pictureBox_resultBB.Image = null;
+            pictureBox_resultRH.Image = null;
+            pictureBox_resultGH.Image = null;
+            pictureBox_resultBH.Image = null;
+            label_result_size.Text = "0 X 0";
+            img_stack.Clear();
+        }
+
+        private void button_undo_Click(object sender, EventArgs e)
+        {
+            if (img_stack.Count() > 1)
+            {
+                img = img_stack.Pop();
+                pictureBox_result.Image = img;
+                label_result_size.Text = img.Width.ToString() + " X " + img.Height.ToString();
+                showBand_res(img);
+            }
+            else if(img_stack.Count() == 1)
+            {
+                img_stack.Pop();
+                clearResult();
+            }
         }
 
         private void showBand_ori(Bitmap img)
         {
             // show RGB bands
             Tuple<int[,,], int[,,], int[,,]> bands = ImageRW.getBand(img);
-            pictureBox_originRB.Image = ImageRW.setRGB(bands.Item1);
-            pictureBox_originGB.Image = ImageRW.setRGB(bands.Item2);
-            pictureBox_originBB.Image = ImageRW.setRGB(bands.Item3);
+            pictureBox_originRB.Image = ImageRW.SetRGB(bands.Item1);
+            pictureBox_originGB.Image = ImageRW.SetRGB(bands.Item2);
+            pictureBox_originBB.Image = ImageRW.SetRGB(bands.Item3);
 
             // show histogram of  RGB bands
             Tuple<Bitmap, Bitmap, Bitmap> histograms = ImageRW.getHistogram(img);
@@ -49,9 +77,9 @@ namespace ImageProcessing
         {
             // show RGB bands
             Tuple<int[,,], int[,,], int[,,]> bands = ImageRW.getBand(img);
-            pictureBox_resultRB.Image = ImageRW.setRGB(bands.Item1);
-            pictureBox_resultGB.Image = ImageRW.setRGB(bands.Item2);
-            pictureBox_resultBB.Image = ImageRW.setRGB(bands.Item3);
+            pictureBox_resultRB.Image = ImageRW.SetRGB(bands.Item1);
+            pictureBox_resultGB.Image = ImageRW.SetRGB(bands.Item2);
+            pictureBox_resultBB.Image = ImageRW.SetRGB(bands.Item3);
 
             // show histogram of  RGB bands
             Tuple<Bitmap, Bitmap, Bitmap> histograms = ImageRW.getHistogram(img);
@@ -73,6 +101,7 @@ namespace ImageProcessing
             {
                 // initialize
                 initForm();
+                clearResult();
 
                 // create image
                 img = new Bitmap(Image.FromFile(openImg.FileName));
@@ -104,19 +133,9 @@ namespace ImageProcessing
         private void button_grayscale_Click(object sender, EventArgs e)
         {
             string str = comboBox_grayscale.Text;
-            switch (str)
-            {
-                case "Mean":
-                    img = Grayscale.mean(img_origin);
-                    break;
-                case "Weight":
-                    img = Grayscale.weight(img_origin);
-                    break;
-
-                case "Max":
-                    img = Grayscale.max(img_origin);
-                    break;
-            }
+            string str2 = comboBox1.Text;
+            img_stack.Push(img);
+            img = Grayscale.Transform(img, str, str2);
             pictureBox_result.Image = img;
             label_result_size.Text = img.Width.ToString() + " X " + img.Height.ToString();
             showBand_res(img);
