@@ -6,7 +6,7 @@ namespace ImageProcessing
 {
     public class Grayscale
     {
-        public static Bitmap Transform(Bitmap img, string str1, string str2)
+        public static Bitmap Transform(Bitmap img, string str1)
         {
             int[,,] rgb = ImageRW.GetRGB(img);
             int height = rgb.GetLength(0);
@@ -79,27 +79,27 @@ namespace ImageProcessing
                     }
                     break;
 
-                case "Power-Law":
-                    for (int j = 0; j < height; j++)
-                    {
-                        for (int i = 0; i < width; i++)
-                        {
-                            double c = 255;
-                            double gamma = 1;
-                            if (str2 == "gamma=2.5")
-                            {
-                                gamma = 2.5;
-                            }
-                            else if (str2 == "gamma=0.4")
-                            {
-                                gamma = 0.4;
-                            }
-                            rgb[j, i, 0] = (int)(c * Math.Pow(((double)rgb[j, i, 0]) / 255, gamma));
-                            rgb[j, i, 1] = (int)(c * Math.Pow(((double)rgb[j, i, 1]) / 255, gamma));
-                            rgb[j, i, 2] = (int)(c * Math.Pow(((double)rgb[j, i, 2]) / 255, gamma));
-                        }
-                    }
-                    break;
+                //case "Power-Law":
+                //    for (int j = 0; j < height; j++)
+                //    {
+                //        for (int i = 0; i < width; i++)
+                //        {
+                //            double c = 255;
+                //            double gamma = 1;
+                //            if (str2 == "gamma=2.5")
+                //            {
+                //                gamma = 2.5;
+                //            }
+                //            else if (str2 == "gamma=0.4")
+                //            {
+                //                gamma = 0.4;
+                //            }
+                //            rgb[j, i, 0] = (int)(c * Math.Pow(((double)rgb[j, i, 0]) / 255, gamma));
+                //            rgb[j, i, 1] = (int)(c * Math.Pow(((double)rgb[j, i, 1]) / 255, gamma));
+                //            rgb[j, i, 2] = (int)(c * Math.Pow(((double)rgb[j, i, 2]) / 255, gamma));
+                //        }
+                //    }
+                //    break;
             }
             img = ImageRW.SetRGB(rgb);
             return img;

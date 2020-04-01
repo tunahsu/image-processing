@@ -25,8 +25,10 @@ namespace ImageProcessing
         private void initForm()
         {
             comboBox_grayscale.SelectedIndex = 0;
-            comboBox1.SelectedIndex = 0;
+            comboBox_enhancement.SelectedIndex = 0;
+            // comboBox1.SelectedIndex = 0;
             button_grayscale.Enabled = true;
+            button_enhancement.Enabled = true;
         }
 
         private void clearResult()
@@ -53,7 +55,7 @@ namespace ImageProcessing
             }
             else if(img_stack.Count() == 1)
             {
-                img_stack.Pop();
+                img = img_stack.Pop();
                 clearResult();
             }
         }
@@ -121,21 +123,31 @@ namespace ImageProcessing
             saveImg.Title = "Save Image File";
             saveImg.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             saveImg.Filter = "All files (*.jpg)|*.*|All files (*.*)|*.*";
-            saveImg.RestoreDirectory = true;
+            // saveImg.RestoreDirectory = true;
 
             if (saveImg.ShowDialog() == DialogResult.OK)
             {
-                img.Save(saveImg.FileName + ".jpg", System.Drawing.Imaging.ImageFormat.Bmp);
+                string filename = saveImg.FileName.Replace(".jpg", "");
+                img.Save(filename + ".jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
             }
-
         }
 
         private void button_grayscale_Click(object sender, EventArgs e)
         {
             string str = comboBox_grayscale.Text;
-            string str2 = comboBox1.Text;
             img_stack.Push(img);
-            img = Grayscale.Transform(img, str, str2);
+            img = Grayscale.Transform(img, str);
+            pictureBox_result.Image = img;
+            label_result_size.Text = img.Width.ToString() + " X " + img.Height.ToString();
+            showBand_res(img);
+        }
+
+        private void button_enhancement_Click(object sender, EventArgs e)
+        {
+            string str = comboBox_enhancement.Text;
+            // string str2 = comboBox1.Text;
+            img_stack.Push(img);
+            img = Enhancement.Transform(img, str);
             pictureBox_result.Image = img;
             label_result_size.Text = img.Width.ToString() + " X " + img.Height.ToString();
             showBand_res(img);
