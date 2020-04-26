@@ -27,10 +27,12 @@ namespace ImageProcessing
             comboBox_grayscale.SelectedIndex = 0;
             comboBox_enhancement.SelectedIndex = 0;
             comboBox_spatialFiltering.SelectedIndex = 0;
+            comboBox_edgeDetection.SelectedIndex = 0;
             // comboBox1.SelectedIndex = 0;
             button_grayscale.Enabled = true;
             button_enhancement.Enabled = true;
             button_spatialFiltering.Enabled = true;
+            button_edgeDetection.Enabled = true;
         }
 
         private void clearResult()
@@ -161,6 +163,17 @@ namespace ImageProcessing
             // string str2 = comboBox1.Text;
             img_stack.Push(img);
             img = SpatialFiltering.Transform(img, str);
+            pictureBox_result.Image = img;
+            label_result_size.Text = img.Width.ToString() + " X " + img.Height.ToString();
+            showBand_res(img);
+        }
+
+        private void button_edgeDetection_Click(object sender, EventArgs e)
+        {
+            string str = comboBox_edgeDetection.Text;
+            // string str2 = comboBox1.Text;
+            img_stack.Push(img);
+            img = EdgeDetection.Transform(img, str);
             pictureBox_result.Image = img;
             label_result_size.Text = img.Width.ToString() + " X " + img.Height.ToString();
             showBand_res(img);

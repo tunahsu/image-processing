@@ -60,6 +60,9 @@
             this.comboBox_spatialFiltering = new System.Windows.Forms.ComboBox();
             this.button_spatialFiltering = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.comboBox_edgeDetection = new System.Windows.Forms.ComboBox();
+            this.button_edgeDetection = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_origin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originRB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_originGB)).BeginInit();
@@ -282,9 +285,9 @@
             // 
             this.button_grayscale.Enabled = false;
             this.button_grayscale.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_grayscale.Location = new System.Drawing.Point(1016, 114);
+            this.button_grayscale.Location = new System.Drawing.Point(1020, 114);
             this.button_grayscale.Name = "button_grayscale";
-            this.button_grayscale.Size = new System.Drawing.Size(100, 30);
+            this.button_grayscale.Size = new System.Drawing.Size(109, 30);
             this.button_grayscale.TabIndex = 26;
             this.button_grayscale.Text = "Go";
             this.button_grayscale.UseVisualStyleBackColor = true;
@@ -298,9 +301,9 @@
             "Mean-Value",
             "Mean-Weight",
             "Maximum"});
-            this.comboBox_grayscale.Location = new System.Drawing.Point(857, 116);
+            this.comboBox_grayscale.Location = new System.Drawing.Point(852, 116);
             this.comboBox_grayscale.Name = "comboBox_grayscale";
-            this.comboBox_grayscale.Size = new System.Drawing.Size(143, 28);
+            this.comboBox_grayscale.Size = new System.Drawing.Size(152, 28);
             this.comboBox_grayscale.TabIndex = 27;
             // 
             // button_undo
@@ -320,7 +323,7 @@
             this.label3.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label3.Location = new System.Drawing.Point(842, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 68);
+            this.label3.Size = new System.Drawing.Size(298, 68);
             this.label3.TabIndex = 32;
             this.label3.Text = "Grayscale";
             // 
@@ -331,18 +334,18 @@
             this.comboBox_enhancement.Items.AddRange(new object[] {
             "Negative",
             "Log-Transform"});
-            this.comboBox_enhancement.Location = new System.Drawing.Point(857, 205);
+            this.comboBox_enhancement.Location = new System.Drawing.Point(852, 205);
             this.comboBox_enhancement.Name = "comboBox_enhancement";
-            this.comboBox_enhancement.Size = new System.Drawing.Size(143, 28);
+            this.comboBox_enhancement.Size = new System.Drawing.Size(152, 28);
             this.comboBox_enhancement.TabIndex = 35;
             // 
             // button_enhancement
             // 
             this.button_enhancement.Enabled = false;
             this.button_enhancement.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_enhancement.Location = new System.Drawing.Point(1016, 202);
+            this.button_enhancement.Location = new System.Drawing.Point(1020, 202);
             this.button_enhancement.Name = "button_enhancement";
-            this.button_enhancement.Size = new System.Drawing.Size(100, 30);
+            this.button_enhancement.Size = new System.Drawing.Size(109, 30);
             this.button_enhancement.TabIndex = 34;
             this.button_enhancement.Text = "Go";
             this.button_enhancement.UseVisualStyleBackColor = true;
@@ -354,7 +357,7 @@
             this.label4.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label4.Location = new System.Drawing.Point(842, 181);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(289, 68);
+            this.label4.Size = new System.Drawing.Size(298, 68);
             this.label4.TabIndex = 36;
             this.label4.Text = "Enhancement";
             // 
@@ -367,18 +370,18 @@
             "Mean",
             "Max",
             "Min"});
-            this.comboBox_spatialFiltering.Location = new System.Drawing.Point(857, 293);
+            this.comboBox_spatialFiltering.Location = new System.Drawing.Point(852, 293);
             this.comboBox_spatialFiltering.Name = "comboBox_spatialFiltering";
-            this.comboBox_spatialFiltering.Size = new System.Drawing.Size(143, 28);
+            this.comboBox_spatialFiltering.Size = new System.Drawing.Size(152, 28);
             this.comboBox_spatialFiltering.TabIndex = 38;
             // 
             // button_spatialFiltering
             // 
             this.button_spatialFiltering.Enabled = false;
             this.button_spatialFiltering.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_spatialFiltering.Location = new System.Drawing.Point(1016, 290);
+            this.button_spatialFiltering.Location = new System.Drawing.Point(1020, 290);
             this.button_spatialFiltering.Name = "button_spatialFiltering";
-            this.button_spatialFiltering.Size = new System.Drawing.Size(100, 30);
+            this.button_spatialFiltering.Size = new System.Drawing.Size(109, 30);
             this.button_spatialFiltering.TabIndex = 37;
             this.button_spatialFiltering.Text = "Go";
             this.button_spatialFiltering.UseVisualStyleBackColor = true;
@@ -390,15 +393,56 @@
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.label5.Location = new System.Drawing.Point(842, 269);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(289, 68);
+            this.label5.Size = new System.Drawing.Size(298, 68);
             this.label5.TabIndex = 39;
             this.label5.Text = "Spatial Filtering";
+            // 
+            // comboBox_edgeDetection
+            // 
+            this.comboBox_edgeDetection.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBox_edgeDetection.FormattingEnabled = true;
+            this.comboBox_edgeDetection.Items.AddRange(new object[] {
+            "Laplacian(4)",
+            "Laplacian(4) Add",
+            "Laplacian(4) Minus",
+            "Laplacian(9)",
+            "Laplacian(9) Add",
+            "Laplacian(9) Minus"});
+            this.comboBox_edgeDetection.Location = new System.Drawing.Point(852, 382);
+            this.comboBox_edgeDetection.Name = "comboBox_edgeDetection";
+            this.comboBox_edgeDetection.Size = new System.Drawing.Size(152, 28);
+            this.comboBox_edgeDetection.TabIndex = 41;
+            // 
+            // button_edgeDetection
+            // 
+            this.button_edgeDetection.Enabled = false;
+            this.button_edgeDetection.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button_edgeDetection.Location = new System.Drawing.Point(1020, 379);
+            this.button_edgeDetection.Name = "button_edgeDetection";
+            this.button_edgeDetection.Size = new System.Drawing.Size(109, 30);
+            this.button_edgeDetection.TabIndex = 40;
+            this.button_edgeDetection.Text = "Go";
+            this.button_edgeDetection.UseVisualStyleBackColor = true;
+            this.button_edgeDetection.Click += new System.EventHandler(this.button_edgeDetection_Click);
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.label6.Font = new System.Drawing.Font("微軟正黑體", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label6.Location = new System.Drawing.Point(842, 358);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(298, 68);
+            this.label6.TabIndex = 42;
+            this.label6.Text = "Edge Detection";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 680);
+            this.Controls.Add(this.comboBox_edgeDetection);
+            this.Controls.Add(this.button_edgeDetection);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.comboBox_spatialFiltering);
             this.Controls.Add(this.button_spatialFiltering);
             this.Controls.Add(this.label5);
@@ -483,6 +527,9 @@
         private System.Windows.Forms.ComboBox comboBox_spatialFiltering;
         private System.Windows.Forms.Button button_spatialFiltering;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox_edgeDetection;
+        private System.Windows.Forms.Button button_edgeDetection;
+        private System.Windows.Forms.Label label6;
     }
 }
 
