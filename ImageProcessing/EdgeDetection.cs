@@ -242,8 +242,6 @@ namespace ImageProcessing
                         {-1, 9, -1},
                         {-1, -1, -1}
                     };
-                    int x;
-                    int y;
 
 
                     for (int j = 0; j < height; j++)
@@ -252,7 +250,7 @@ namespace ImageProcessing
                         {
                             for (int k = 0; k < 3; k++)
                             {
-                                x = 
+                                rgb[j, i, k] = rgb[j, i, k] -
                                 (
                                 rgb_big[j, i, k] * mask[0, 0] +
                                 rgb_big[j, i + 1, k] * mask[0, 1] +
@@ -265,16 +263,6 @@ namespace ImageProcessing
                                 rgb_big[j + 2, i + 2, k] * mask[2, 2]
                                 );
 
-                                if (x > 255)
-                                {
-                                    x = 255;
-                                }
-                                if (x < 0)
-                                {
-                                    x = 0;
-                                }
-                                y = rgb[j, i, k] - x;
-                                rgb[j, i, k] = y;
                                 if (rgb[j, i, k] > 255)
                                 {
                                     rgb[j, i, k] = 255;
