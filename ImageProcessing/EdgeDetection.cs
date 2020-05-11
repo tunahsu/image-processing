@@ -275,6 +275,58 @@ namespace ImageProcessing
                         }
                     }
                     break;
+
+                case "Sobel":
+                    int[,] mask_gx = new int[3, 3]
+                    {
+                        {-1, 0, 1},
+                        {-2, 0, 2},
+                        {-1, 0, 1}
+                    };
+                    int[,] mask_gy = new int[3, 3]
+{
+                        {-1, -2, -1},
+                        {0, 0, 0},
+                        {1, 2, 1}
+                    };
+
+
+                    for (int j = 0; j < height; j++)
+                    {
+                        for (int i = 0; i < width; i++)
+                        {
+                            for (int k = 0; k < 3; k++)
+                            {
+                                int gx = rgb_big[j, i, k] * mask_gx[0, 0] +
+                                rgb_big[j, i + 1, k] * mask_gx[0, 1] +
+                                rgb_big[j, i + 2, k] * mask_gx[0, 2] +
+                                rgb_big[j + 1, i, k] * mask_gx[1, 0] +
+                                rgb_big[j + 1, i + 1, k] * mask_gx[1, 1] +
+                                rgb_big[j + 1, i + 2, k] * mask_gx[1, 2] +
+                                rgb_big[j + 2, i, k] * mask_gx[2, 0] +
+                                rgb_big[j + 2, i + 1, k] * mask_gx[2, 1] +
+                                rgb_big[j + 2, i + 2, k] * mask_gx[2, 2];
+
+                                int gy = rgb_big[j, i, k] * mask_gy[0, 0] +
+                                rgb_big[j, i + 1, k] * mask_gy[0, 1] +
+                                rgb_big[j, i + 2, k] * mask_gy[0, 2] +
+                                rgb_big[j + 1, i, k] * mask_gy[1, 0] +
+                                rgb_big[j + 1, i + 1, k] * mask_gy[1, 1] +
+                                rgb_big[j + 1, i + 2, k] * mask_gy[1, 2] +
+                                rgb_big[j + 2, i, k] * mask_gy[2, 0] +
+                                rgb_big[j + 2, i + 1, k] * mask_gy[2, 1] +
+                                rgb_big[j + 2, i + 2, k] * mask_gy[2, 2];
+
+                                rgb[j, i, k] = (int)Math.Sqrt(Math.Pow(gx, 2) + Math.Pow(gy, 2));
+
+                                if (rgb[j, i, k] > 255)
+                                {
+                                    rgb[j, i, k] = 255;
+                                }
+                            }
+                        }
+                    }
+                    break;
             }
             img = ImageRW.SetRGB(rgb);
             return img;

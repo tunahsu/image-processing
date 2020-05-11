@@ -407,7 +407,8 @@
             "Laplacian(4) Minus",
             "Laplacian(9)",
             "Laplacian(9) Add",
-            "Laplacian(9) Minus"});
+            "Laplacian(9) Minus",
+            "Sobel"});
             this.comboBox_edgeDetection.Location = new System.Drawing.Point(852, 382);
             this.comboBox_edgeDetection.Name = "comboBox_edgeDetection";
             this.comboBox_edgeDetection.Size = new System.Drawing.Size(152, 28);
